@@ -1,0 +1,420 @@
+@charset "utf-8";
+
+$lrmargin:13%;
+
+//顶部
+.nav_top{
+  $h:40px;
+
+  @include wh(100%,$h);
+
+  background:lighten($bgacolor, 10%);
+  display:flex;
+  justify-content: space-between;
+
+  ul{
+    @include wh(20%, $h);
+
+    display:flex;
+
+    &:nth-child(1){
+      justify-content: flex-end;
+    }
+    &:nth-child(2){
+      justify-content: flex-start;
+    }
+
+    li{
+      @include cen($h);
+      @include wh(30%, $h);
+
+      color:lighten($fcolor, 20%);
+      font-size:$fsizes - 2;
+      cursor:pointer;
+
+      &:hover{
+        color: $flcolor;
+        background: $bgllcolor;
+      }
+    }
+  }
+}
+
+//导航
+nav{
+  $h:80px;
+  
+  margin:0px $lrmargin;
+  display:flex;
+  margin-top:10px;
+  align-items:center;
+
+  //左侧 logo
+  .logo{
+    @include rect($h - 20);
+
+    background:url(/static/iva/logo.PNG) center/cover;
+  }
+
+  //推荐类别
+  ul{
+    @include wh(60%,$h);
+    
+    display:flex;
+    margin-left:10%;
+
+    li{
+      @include cen($h);
+      @include wh(15%,$h);
+      
+      font-size:$fsizes;
+      color:darken($fcolor,20%);
+      cursor:pointer;
+
+      &:hover{
+        color:$facolor;
+      }
+    }
+  }
+
+  //搜索框
+  form{
+    @include wh(25%,$h - 40);
+
+    display:flex;
+
+    input{
+      @include wh(85%,$h - 40);
+
+      font-size:$fsizem;
+      padding-left:10px;
+      border:solid 1px #ccc;
+
+      &:focus{
+        border:solid 1px #aaa;
+      }
+    }
+
+    div{
+      @include wh(15%,$h - 40);
+      
+      border:solid 1px #ccc;
+      border-left:none;
+      transition:all 0.6s;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      svg{
+        @include wh(80%,80%);
+
+        &:hover path{
+          fill:white;
+        }
+      }
+
+      &:hover{
+        background:#aaa;
+      }
+    }
+  }
+}
+
+//推荐商品列表
+.recom{
+  $h:240px;
+
+  @include wh(100%,$h);
+  @include pos(auto,auto,auto,auto,200);
+
+  display:flex;
+  justify-content:center;
+  transition:all 0.3s;
+  height:0px;
+  overflow:hidden;
+  background:white;
+
+  .child{
+    @include wh(100% - $lrmargin * 2,$h);
+
+    display:flex;
+
+    figure{
+      @include wh(140px,$h);
+
+      margin:0px 20px;
+      cursor:pointer;
+
+      img{
+       @include wh(100%,60%);
+
+        padding:0px 20px;
+        margin-top:16%;
+        border-left:solid 1px rgba(209, 207, 207, 0.5);
+        border-right:solid 1px rgba(209, 207, 207, 0.5);
+      }
+
+      figcaption{
+        @include wh(100%,30%);
+        padding:0px 20px;
+
+        .name{
+          @include cen(20px);
+          @include slh();
+
+          font-size:$fsizes - 4;
+        }
+
+        .price{
+          @include cen(20px);
+
+          font-size:$fsizes - 5;
+          color:$fcolor_price;
+        }
+      }
+    }
+  }
+}
+
+//页面底部
+.bottom{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:100px;
+  background: white;
+
+  .b_top{
+    @include wh(100%,80px);
+
+    margin:0px $lrmargin;
+    border-bottom:1px solid rgba(0,0,0,0.2);
+
+    ul{
+      @include wh(100%,80px);
+
+      display:flex;
+      align-items:center;
+
+      li{
+        @include wh(20%,30px);
+        @include cen(30px);
+
+        cursor:pointer;
+        border-right:1px solid rgba(0,0,0,0.3);
+        font-size:$fcolor;
+
+        &:nth-child(5){
+          border-right:none;
+        }
+      }
+    }
+  }
+
+  .b_bottom{
+    width:100% - $lrmargin * 2 - 14.8%;
+    margin:30px 0px 0px $lrmargin;
+    border-right:1px solid rgba(0,0,0,0.2);
+    display:flex;
+
+    .b_child{
+      width:16%;
+
+      h3{
+        @include wh(100%,50px);
+        @include cen(50px);
+
+        color:darken($fcolor,20%);
+        font-size:$fsizem;
+        font-weight:400;
+      }
+
+      ul{
+        width:100%;
+
+        li{
+          @include wh(100%,20px);
+          @include cen(20px);
+
+          cursor:pointer;
+          font-size:$fsizes - 2;
+          color:$fcolor;
+          margin:8px 0px;
+        }
+      }
+    }
+  }
+
+  .kf{
+    width:14%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    .phone{
+      @include wh(80%,10%);
+      @include cen(10%);
+
+      font-size:$fsizel + 2;
+      color:$fcolor;
+      margin-top:20%;
+    }
+
+    .fuzhu{
+      @include wh(60%,30%);
+
+      font-size:$fsizes - 4;
+      text-align:center;
+      color:$fcolor;
+    }
+
+    .lxkf{
+      @include wh(60%,20%);
+
+      border:1px solid rgba(0,0,0,0.6);
+      line-height:32px;
+      text-align:center;
+      color:$fcolor;
+      cursor:pointer;
+      font-size:$fsizes - 1;
+
+      &:hover{
+        background:$bgacolor;
+        color:$flcolor;
+      }
+    }
+  }
+
+  //友情链接
+  .b_friend{
+    @include wh(100%,100px);
+
+    margin:20px $lrmargin;
+    display:flex;
+    align-items:center;
+
+    //左侧 logo
+    .logo{
+      @include rect(60px);
+
+      background:url(/static/iva/logo.PNG) center/cover;
+      margin:0% 10%;
+    }
+
+    //描述
+    .ms{
+      @include wh(70%,60px);
+
+      font-size:$fsizem;
+      color:$fcolor;
+    }
+  }
+}
+
+//广告
+.ad{
+  @include wh(100% - $lrmargin * 2,120px);
+
+  margin:0px $lrmargin;
+  cursor:pointer;
+
+  img{
+    @include wh(100%,100%);
+  }
+}
+
+//搜索结果样式
+.result{
+  margin:20px $lrmargin;
+  display:flex;
+  flex-wrap:wrap;
+
+  figure{
+    @include wh(24%,430px);
+    @include shadow();
+
+    margin:10px 1% 0px 0px;
+    background:white;
+
+    .outer{
+      @include wh(100%, 65%);
+
+      display:flex;
+      justify-content:center;
+      cursor:pointer;
+
+      img{
+        max-width:100%;
+        height:100%;
+      }
+    }
+
+    figcaption{
+      $h:30px;
+
+      @include wh(100%, 32%);
+
+      margin-top:3%;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+
+      .sp_name{
+        @include wh(70%, $h);
+        @include cen($h);
+        @include slh();
+
+        font-size:$fsizes;
+        color:$fcolor;
+      }
+
+      //价格
+      .price{
+        @include wh(70%, $h);
+        @include cen($h);
+
+        color:$fcolor_price;
+        font-size:$fsizel;
+      }
+
+      //样式图片
+      .style{
+        @include wh(100%, $h + 10);
+
+        display:flex;
+        justify-content:center;
+
+        img{
+          height:100%;
+          margin:0px 4px;
+          border:solid 2px rgba(100,100,100,0.3);
+          cursor:pointer;
+        }
+
+        //当前选中
+        .active{
+          border:solid 2px $fcolor_price;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

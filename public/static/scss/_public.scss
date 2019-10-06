@@ -1,0 +1,310 @@
+@charset "utf-8";
+
+$nav_height:45px;               //导航条高度
+
+$fsizes:16px;                   //字体大小，依次是小、中、大
+$fsizem:18px;
+$fsizel:20px;
+
+$facolor:rgb(150,150,150);    //字体色，标题暗色
+$flcolor:rgb(240,240,240);    //标题亮色
+$fcolor:rgb(110,110,110);     //正常色
+$fcolor_price:#ff6700;        //价格色
+
+$bglcolor:#3A3D49;            //背景色，浅色
+$bgllcolor:#676c82;           //最浅
+$bgacolor:rgb(33, 36, 44);    //深色
+$bgaacolor:rgb(18, 20, 24);   //最深
+
+$lbact:#1E9FFF;               //列表活跃色
+$edt:#FF7159;                 //编辑色
+$suces:#5FB878;               //确认、成功色
+$sucesa:rgb(23, 168, 64);     //成功色，加深
+
+//设置高度，并让文字水平垂直居中
+@mixin cen($h){
+  height:$h;
+  line-height:$h;
+  text-align:center;
+}
+
+//设置宽、高
+@mixin wh($w,$h){
+  width:$w;
+  height:$h;
+}
+
+//正方形，宽高相等
+@mixin rect($len){
+  width:$len;
+  height:$len;
+}
+
+//圆形，宽、高、边框圆角相等，并且文字水平、垂直居中
+@mixin cir($len){
+  width:$len;
+  height:$len;
+  border-radius:$len;
+  line-height:$len;
+  text-align:center;
+}
+
+//溢出显示省略号
+@mixin slh(){
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+//悬停阴影
+@mixin shadow(){
+  transition:all 0.6s;
+  &:hover{
+    transform: translate(auto,-3px);
+    box-shadow:0px 3px 24px #aaa;
+  }
+}
+
+//表单 label，参数是 label 高度，input 高度、宽度，span 宽度，btn 宽度
+@mixin label($h,$ipt_h,$ipt_w,$w_span,$w_btn){
+  label{
+    @include wh(100%,$h);
+
+    margin:2px 0px;
+    display:flex;
+    align-items:center;//flex item 垂直居中
+
+    .input{
+      @include wh($w_span, 100%);
+      @include slh();
+
+      line-height:$h;
+      color:$fcolor;
+      display:inline-block;
+      font-size:$fsizes;
+    }
+
+    input[type="text"],input[type="password"]{
+      @include wh($ipt_w, $ipt_h);
+
+      font-size:$fsizem;
+      color:$fcolor;
+      padding:0px 1%;
+      border:1px rgba(200,200,200,0.9) solid;
+    }
+
+    input[type="file"]{
+      @include wh(20%, 30px);
+
+      font-size:$fsizes;
+      color:$fcolor;
+    }
+    
+    input:focus,textarea:focus{
+      box-shadow:1px 1px 12px rgb(160,160,160);
+    }
+
+    .btn{
+      @include wh($w_btn, $h);
+
+      margin:12px auto;
+      background:$bgllcolor;
+      border-radius:$h/2;
+      color:$flcolor;
+      font-size:$fsizel;
+      transition:all 0.6s;
+      cursor:pointer;
+
+      div{
+        @include wh(34%,$h);
+
+        line-height:$h;
+        text-align:right;
+        display:inline-block;
+      }
+
+      &:hover{
+        background:$bgaacolor;
+        color:$flcolor;
+        font-size:$fsizel + 2;
+      }
+    }
+  }
+}
+
+//表单 label，参数是 label 高度，input 高度、宽度，span 宽度，btn 宽度
+@mixin form($h,$ipt_h,$ipt_w,$w_span,$w_btn){
+  @include label($h,$ipt_h,$ipt_w,$w_span,$w_btn);
+
+  display:flex;
+  flex-wrap:wrap;
+  padding:1% 2%;
+  overflow-y:auto;
+}
+
+//商品类目录样式
+@mixin spclasslb($w,$h,$c_h){
+  @include wh($w, $h);
+  overflow-y:auto;
+
+  //上一级、新建按钮
+  .up{
+    @include wh(100%,$c_h);
+    @include cen($c_h);
+
+    background:$bgllcolor;
+    color:$flcolor;
+    cursor:pointer;
+
+    &:hover{
+      background:$bgacolor;
+      color:$flcolor;
+    }
+  }
+
+  //目录
+  ul{
+    width:100%;
+    transition:all 0.6s;
+
+    li{
+      @include wh(100%,$c_h - 4px);
+      @include cen($c_h - 4px);
+
+      background:$bglcolor;
+      color:$flcolor;
+      cursor:pointer;
+      position:relative;
+
+      &:hover{
+        background:$bgacolor;
+      }
+    }
+  }
+}
+
+//列表统一样式，整体宽、高，单条记录高
+@mixin lb($w, $h, $c_h){
+  @include wh($w, $h);
+  overflow-y:auto;
+
+  //顶部标题、记录的共同样式
+  ul{
+    @include wh(100%, $c_h);
+
+    display:flex;
+    justify-content:space-between;
+
+    //每一项的具体样式
+    li{
+      @include cen($c_h);
+      @include slh();
+
+      color:$fcolor;
+    }
+  }
+
+  //标题单独样式
+  ul:nth-child(1){
+    background:$bgllcolor;
+
+    li{
+      color:darken($flcolor,5%);
+      border-right:darken($flcolor,5%) solid 1px;
+    }
+  }
+}
+
+//后台盒子
+@mixin box(){
+  @include shadow();
+  
+  background:white;
+  border-radius:10px;
+}
+
+//绝对定位，依次是上、右、下、左（默认写 auto）、z 轴坐标
+@mixin pos($t,$r,$b,$l,$z){
+  position:absolute;
+  top:$t;
+  right:$r;
+  bottom:$b;
+  left:$l;
+  z-index:$z;
+}
+
+//公共样式
+*{
+  padding:0px;
+  margin:0px;
+}
+
+ul,ol{
+  list-style-type:none;
+}
+
+//更改输入框、文本框获得焦点时的样式
+input:focus,textarea:focus{
+  outline:none;   //去除表单获得焦点时的蓝色线框
+}
+
+//模态框样式
+#inq{
+  $w:30%;
+
+  @include wh($w,22%);
+  @include pos(24%,auto,auto,(100% - $w) / 2,2);
+
+  display:flex;
+  flex-wrap:wrap;
+  background:white;
+  border-radius:10px;
+
+  .inq_top{
+    @include wh(90%,40%);
+    
+    padding:4%;
+    text-indent:2em;
+    font-size:$fsizes;
+    color:$fcolor;
+  }
+
+  .inq_bottom{
+    @include wh(100%,30%);
+
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-around;
+
+    .yes,.no{
+      @include wh(40%,80%);
+      @include cen(40px);
+
+      border-radius:6px;
+      cursor:pointer;
+      color:white;
+      letter-spacing:5px;
+      font-size:$fsizem - 1;
+    }
+
+    .yes{
+      background:$sucesa;
+
+      &:hover{
+        background:$suces;
+      }
+    }
+
+    .no{
+      background:$bgacolor;
+
+      &:hover{
+        background:$bglcolor;
+      }
+    }
+  }
+}
+
+
+
+

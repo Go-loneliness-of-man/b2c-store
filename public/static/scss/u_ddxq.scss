@@ -1,0 +1,115 @@
+@charset "utf-8";
+@import '_public';
+@import '_u_public';
+
+.xq{
+  margin:20px $lrmargin;
+}
+
+.state{
+  @include wh(100%, 200px);
+
+  .text{
+    @include wh(100%, 60px);
+
+    display:flex;
+
+    div{
+      @include wh(20%, 100%);
+      @include cen(60px);
+
+      font-size:$fsizel;
+      color:$fcolor;
+      font-weight:600;
+    }
+  }
+
+  .state_b{
+    $c:#ccc;
+    @include wh(100%, 100px);
+    
+    display:flex;
+    align-items: center;
+
+    .radius{
+      @include cir(70px);
+
+      color:$flcolor;
+      font-size:40px;
+      border:solid 6px $c;
+      background:$c;
+
+      &:nth-child(1){
+        margin-left:5.5%;
+      }
+    }
+
+    .bar{
+      @include wh(14%, 15px);
+
+      font-size:40px;
+      border-top:solid 6px $c;
+      border-bottom:solid 6px $c;
+      position:relative;
+      right:0px;
+      z-index:-1;
+      background:$c;
+    }
+
+    .active{
+      background:#009349;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

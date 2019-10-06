@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>b2c 商城后台管理系统</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul id="header_one">
+      <li><svg t="1559195323027" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8475" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M63.696 319.784h512.416v64.044H63.696zM63.333 895.639h897.021v63.919H63.333zM64.012 64.012h896.342v63.978H64.012zM63.813 639.965h512.298v63.919H63.813z" fill="#8a8a8a" p-id="8476"></path><path d="M639.902 832.078l320.074-319.855-320.074-319.855z" fill="#8a8a8a" p-id="8477"></path></svg></li><!--侧边栏伸缩-->
+      <li class="a_src" data-a_src="http://store.com"><svg t="1559195380762" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10013" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512z m0-960a448 448 0 1 0 448 448A448 448 0 0 0 512 64z" fill="#8a8a8a" p-id="10014"></path><path d="M480 64h64v896h-64z" fill="#8a8a8a" p-id="10015"></path><path d="M512 1024c-143.68 0-256-224-256-512s112.32-512 256-512 256 224 256 512-112.32 512-256 512z m0-960c-90.88 0-192 184-192 448s101.12 448 192 448 192-184 192-448-101.12-448-192-448z" fill="#8a8a8a" p-id="10016"></path><path d="M32 480h960v64H32zM96 256h832v64H96zM96 704h832v64H96z" fill="#8a8a8a" p-id="10017"></path></svg></li><!--商城前台首页-->
+    </ul>
+    <ul id="header_two">
+      <li><svg t="1559195461959" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12722" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M452 63.9h117.7v449.3H452z" fill="#707070" p-id="12723"></path><path d="M679.8 144.5c-18.2-8.5-37.1-15.6-56.6-21.5v125.2c2.3 1 4.7 1.9 7 3C739.3 302 809.8 412.5 809.8 532.7c0 171.1-139.2 310.2-310.2 310.2S189.3 703.8 189.3 532.7c0-125 74.4-237.2 189.5-285.9 6.5-2.8 13.1-5.2 19.7-7.5V116.9c-22.6 5.4-44.5 12.6-65.6 21.5-153.6 65-261.3 217-261.3 394.3 0 236.3 191.6 427.9 427.9 427.9 236.3 0 427.9-191.6 427.9-427.9 0-171.9-101.4-320.1-247.6-388.2z" fill="#707070" p-id="12724"></path></svg></li><!--退出-->
+    </ul>
+  </header>
+
+  <div id="aside"><!--侧栏最终要做成左侧弹出框-->
+    <div id="logo">项目实战 —— b2c 商城系统</div>
+
+    <div class="lbparent">
+      <div class="tag lbact"><svg t="1559195057410" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4295" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M488.576 61.312a32.704 32.704 0 0 1 45.504 0 32.064 32.064 0 0 1 0 45.568L80.64 559.68a32.704 32.704 0 0 1-45.568 0 32.064 32.064 0 0 1 0-45.504L488.576 61.312z" fill="#333333" p-id="4296"></path><path d="M489.216 60.672a32.064 32.064 0 0 1 45.504 0l453.504 453.504a32.192 32.192 0 1 1-45.568 45.504l-453.44-453.44a32.704 32.704 0 0 1 0-45.568zM704 165.888a31.424 31.424 0 0 1 32.064-32.064H864.32c17.728 0 32.064 14.336 32.064 32a31.424 31.424 0 0 1-32 32.128h-128.32A32.064 32.064 0 0 1 704 165.888z" fill="#333333" p-id="4297"></path><path d="M832.32 165.248c0-17.728 14.4-32.064 32.064-32.064a31.424 31.424 0 0 1 32.064 32v128.32a32.064 32.064 0 0 1-32 32.064 31.424 31.424 0 0 1-32.128-32V165.184zM126.784 550.72a32.064 32.064 0 1 1 64.192 0v384.832a32.064 32.064 0 1 1-64.192 0V550.72z" fill="#333333" p-id="4298"></path><path d="M126.784 935.552a31.424 31.424 0 0 1 32.064-32.064h256.64c17.664 0 32 14.336 32 32a31.424 31.424 0 0 1-32 32.128h-256.64a32.064 32.064 0 0 1-32-32.064z m449.024 0a31.424 31.424 0 0 1 32-32.064h256.64c17.664 0 32 14.336 32 32a31.424 31.424 0 0 1-32 32.128h-256.64a32.064 32.064 0 0 1-32-32.064z" fill="#333333" p-id="4299"></path><path d="M383.36 742.464a32.064 32.064 0 0 1 32.064-31.36 31.424 31.424 0 0 1 32.064 31.36v192.448a32.064 32.064 0 0 1-32 31.36 31.424 31.424 0 0 1-32.128-31.36V742.4z" fill="#333333" p-id="4300"></path><path d="M383.36 743.104a31.424 31.424 0 0 1 31.424-32h192.448a32.064 32.064 0 0 1 31.36 32 31.424 31.424 0 0 1-31.36 32.064H414.72a32.064 32.064 0 0 1-31.424-32z" fill="#333333" p-id="4301"></path><path d="M575.808 742.464a32.064 32.064 0 0 1 32-31.36 31.424 31.424 0 0 1 32.128 31.36v192.448a32.064 32.064 0 0 1-32.064 31.36 31.424 31.424 0 0 1-32.064-31.36V742.4z m288.64-223.808a32.704 32.704 0 0 0-32.128 32v384.896a32.064 32.064 0 1 0 64.128 0V550.72a32.704 32.704 0 0 0-32-32.064z" fill="#333333" p-id="4302"></path></svg><span>首页</span></div>
+      <ul>
+        <li class="lbx">首页</li>
+      </ul>
+    </div>
+
+    <div class="lbparent">
+      <div class="tag"><svg t="1559194993085" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1987" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M 512 144 a 144 144 0 0 1 144 144 h 80 c 0 -123.71 -100.29 -224 -224 -224 S 288 164.29 288 288 h 80 a 144 144 0 0 1 144 -144 Z M 826 288 H 198 a 70 70 0 0 0 -70 70 v 532 a 70 70 0 0 0 70 70 h 628 a 70 70 0 0 0 70 -70 V 358 a 70 70 0 0 0 -70 -70 Z m -10 547.2 a 44.8 44.8 0 0 1 -44.8 44.8 H 252.8 a 44.8 44.8 0 0 1 -44.8 -44.8 V 400 a 32 32 0 0 1 32 -32 h 531.2 a 44.8 44.8 0 0 1 44.8 44.8 Z" fill="#8a8a8a" p-id="1988"></path><path d="M 656 288 h 80 v 168.04 h -80 Z M 288 288 h 80 v 168.04 h -80 Z" fill="#8a8a8a" p-id="1989"></path><path d="M 696 408 a 84 84 0 1 0 84 84 a 84 84 0 0 0 -84 -84 Z m 0 104 a 20 20 0 1 1 20 -20 a 20 20 0 0 1 -20 20 Z M 328 408 a 84 84 0 1 0 84 84 a 84 84 0 0 0 -84 -84 Z m 0 104 a 20 20 0 1 1 20 -20 a 20 20 0 0 1 -20 20 Z" fill="#8a8a8a" p-id="1990"></path></svg><span>商品管理</span></div>
+      <ul>
+        <li class="lbx">商品列表</li>
+        <li class="lbx">上架商品</li>
+        <li class="lbx">修改商品</li>
+        <li class="lbx">分类推荐</li>
+        <li class="lbx">额外字段</li>
+      </ul>
+    </div>
+
+    <div class="lbparent">
+      <div class="tag"><svg t="1559195087135" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4872" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M923.386 62.637H776.035V21.341C776.035 9.538 766.467 0 754.636 0c-11.773 0-21.341 9.538-21.341 21.341v41.296H541.618V21.341C541.618 9.538 532.052 0 520.277 0c-11.831 0-21.397 9.538-21.397 21.341v41.296H306.185V21.341C306.185 9.538 296.675 0 284.844 0c-11.833 0-21.343 9.538-21.343 21.341v41.296H112.584c-11.775 0-21.285 9.567-21.285 21.37v916.037c0 11.803 9.51 21.369 21.285 21.369h810.802c11.831 0 21.342-9.566 21.342-21.369V84.007c0-11.803-9.511-21.37-21.342-21.37z m-21.341 916.067H133.981V105.349h129.52v59.92c-28.756 9.086-49.758 35.578-49.758 67.166 0 39.003 31.871 70.761 71.043 70.761 39.173 0 71.1-31.758 71.1-70.761 0-31.559-21.001-58.052-49.701-67.138v-59.948H498.88v59.863c-28.758 9.029-49.872 35.578-49.872 67.222 0 39.003 31.87 70.761 71.044 70.761 39.173 0 71.1-31.758 71.1-70.761 0-31.503-20.945-57.967-49.533-67.081v-60.004h191.677v59.92c-28.7 9.086-49.759 35.578-49.759 67.166 0 39.003 31.928 70.761 71.1 70.761 39.173 0 71.101-31.758 71.101-70.761 0-31.559-21.059-58.052-49.701-67.138v-59.948h126.01v873.355z m-635.6-767.243c3.737 6.481 10.416 11.039 18.398 11.039 7.981 0 14.66-4.557 18.284-11.039 6 5.151 10.076 12.51 10.076 20.973 0 15.454-12.793 28.078-28.417 28.078-15.624 0-28.304-12.624-28.304-28.078 0-8.491 3.963-15.822 9.963-20.973z m235.435-0.086c3.68 6.51 10.359 11.124 18.397 11.124 7.926 0 14.605-4.528 18.285-10.954 5.943 5.151 9.906 12.454 9.906 20.888 0 15.454-12.793 28.078-28.417 28.078s-28.306-12.624-28.306-28.078c0.001-8.547 4.022-15.906 10.135-21.058z m234.415 0.086c3.68 6.481 10.359 11.039 18.341 11.039 8.038 0 14.718-4.557 18.342-11.039 6 5.151 10.02 12.51 10.02 20.973 0 15.454-12.737 28.078-28.361 28.078s-28.36-12.624-28.36-28.078c-0.002-8.491 4.018-15.822 10.018-20.973z" fill="#8a8a8a" p-id="4873"></path><path d="M752.768 467.982H462.311c-11.831 0-21.399 9.566-21.399 21.37 0 11.803 9.568 21.341 21.399 21.341h290.457c11.831 0 21.342-9.538 21.342-21.341-0.001-11.804-9.511-21.37-21.342-21.37zM371.454 422.865h-86.668c-11.775 0-21.341 9.538-21.341 21.341v87.431c0 11.803 9.566 21.37 21.341 21.37h86.668c11.831 0 21.341-9.567 21.341-21.37v-87.431c0-11.803-9.51-21.341-21.341-21.341z m-21.341 87.432h-43.928v-44.721h43.928v44.721zM752.768 638.826H462.311c-11.831 0-21.399 9.566-21.399 21.369 0 11.804 9.568 21.341 21.399 21.341h290.457c11.831 0 21.342-9.537 21.342-21.341-0.001-11.802-9.511-21.369-21.342-21.369zM752.768 809.698H462.311c-11.831 0-21.399 9.539-21.399 21.343 0 11.803 9.568 21.34 21.399 21.34h290.457c11.831 0 21.342-9.537 21.342-21.34-0.001-11.804-9.511-21.343-21.342-21.343zM371.454 593.709h-86.668c-11.775 0-21.341 9.538-21.341 21.341v87.46c0 11.803 9.566 21.343 21.341 21.343h86.668c11.831 0 21.341-9.54 21.341-21.343v-87.46c0-11.803-9.51-21.341-21.341-21.341z m-21.341 87.432h-43.928V636.42h43.928v44.721zM371.454 764.552h-86.668c-11.775 0-21.341 9.569-21.341 21.372v87.431c0 11.804 9.566 21.341 21.341 21.341h86.668c11.831 0 21.341-9.537 21.341-21.341v-87.431c0-11.803-9.51-21.372-21.341-21.372z m-21.341 87.433h-43.928v-44.722h43.928v44.722z" fill="#8a8a8a" p-id="4874"></path></svg><span>订单管理</span></div>
+      <ul>
+        <li class="lbx">订单列表</li>
+        <li class="lbx">待发货单</li>
+        <li class="lbx">退货单</li>
+        <li class="lbx">售后单</li>
+      </ul>
+    </div>
+
+    <div class="lbparent">
+      <div class="tag"><svg t="1559195159265" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6546" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M866.904 776.46h-665.591v-540.569c0-14.061-11.399-25.46-25.461-25.46s-25.461 11.399-25.461 25.46v562.914c0 11.597 7.755 21.376 18.36 24.45 3.906 2.586 8.701 4.126 13.856 4.126 0.010 0 0.022 0 0.033 0h684.263c14.062 0 25.462-11.399 25.462-25.462s-11.401-25.46-25.462-25.46z" fill="#2c2c2c" p-id="6547"></path><path d="M242.038 649.626h65.004c7.32 0 13.67-4.122 16.875-10.167l40.21-56.702 62.675 128.048c3.313 6.771 10.103 10.705 17.165 10.705 0.422 0 0.844-0.019 1.268-0.048 0.041 0 0.083 0.006 0.125 0.006 7.942 0 15.361-4.997 18.069-12.932l99.578-291.744 58.784 178.43c2.327 7.064 8.381 11.85 15.262 12.903 2.117 0.884 4.577 1.399 7.156 1.399h101.176c7.701 11.487 22.996 19.318 40.614 19.318 25.361 0 45.923-16.218 45.923-36.226 0-20.002-20.561-36.219-45.923-36.219-15.274 0-28.799 5.888-37.147 14.935h-94.721l-72.076-218.772c-1.369-6.333-5.924-11.812-12.501-14.056-9.981-3.408-20.833 1.922-24.24 11.904l-103.692 303.802-56.438-115.301c-1.351-2.711-3.226-4.974-5.508-6.734 1.479 0.222-1.534-2.396-5.117-3.944-5.152-4.155-17.069-2.129-23.17 6.474l-54.415 76.733h-54.935c-10.547 0-19.095 8.549-19.095 19.095s8.55 19.096 19.096 19.096z" fill="#2c2c2c" p-id="6548"></path></svg><span>财务报表</span></div>
+      <ul>
+        <li class="lbx">总营业额</li>
+        <li class="lbx">总订单量</li>
+        <li class="lbx">总成交量</li>
+      </ul>
+    </div>
+
+    <div class="lbparent">
+      <div class="tag"><svg t="1559195205796" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7154" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M309.95456 780.40576h-207.0016a29.568 29.568 0 0 1-29.568-29.56288v-207.00672c32.66048 0.01536 59.15136-26.45504 59.16672-59.11552 0.01024-32.6656-26.45504-59.15648-59.12064-59.16672h-0.04608V218.55744a29.56288 29.56288 0 0 1 29.568-29.568h206.99648l0.00512 591.41632z" fill="#707070" p-id="7155"></path><path d="M552.82176 372.69504m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#707070" p-id="7156"></path><path d="M930.93888 248.12544a29.56288 29.56288 0 0 1 29.568-29.568 29.568 29.568 0 0 0-29.568-29.568H369.09056v591.4112h561.85344a29.568 29.568 0 0 0 29.56288-29.568 29.568 29.568 0 1 1 0-59.136v-59.14624a29.568 29.568 0 1 1 0-59.13088v-59.14112a29.568 29.568 0 1 1 0-59.136V395.9808a29.568 29.568 0 1 1 0-59.14112V277.69856a29.568 29.568 0 0 1-29.568-29.57312z m-378.11712 44.5696c44.20096 0 80 35.79904 80 80s-35.79904 80-80 80c-44.20608 0-80-35.79904-80-80s35.79392-80 80-80z m224 384c-44.20608 0-80-35.79904-80-80s35.79392-80 80-80c44.20096 0 80 35.79904 80 80s-35.80928 80-80 80z m75.38688-356.59776l-352 352c-3.2 3.2-7.19872 4.58752-11.40224 4.58752a16.60416 16.60416 0 0 1-11.40224-4.58752 16.05632 16.05632 0 0 1 0-22.59968l352-352a16.05632 16.05632 0 0 1 22.59968 0c6.41024 6.1952 6.41024 16.19968 0.2048 22.59968z" fill="#707070" p-id="7157"></path><path d="M776.82176 596.69504m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#707070" p-id="7158"></path></svg><span>促销管理</span></div>
+      <ul>
+        <li class="lbx">优惠券列表</li>
+        <li class="lbx">折扣列表</li>
+      </ul>
+    </div>
+
+    <div class="lbparent">
+      <div class="tag"><svg t="1559195226845" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7526" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M371.9 639.5H123.5c-33.1 0-60-26.9-60-60V123.6c0-33.1 26.9-60 60-60h776.4c33.1 0 60 26.9 60 60V458c0 8.1 3.1 16 8.7 21.9 19.9 21.2 55.4 7.1 55.4-21.9V120c0-66.3-53.7-120-120-120H120C53.7 0 0 53.7 0 120v462.3c0 66.3 53.7 120 120 120h251.9c15 0 27.9-10.6 30.8-25.3 3.9-19.4-11-37.5-30.8-37.5z" fill="" p-id="7527"></path><path d="M180.4 247.2c0 65.5 53.1 118.6 118.6 118.6s118.6-53.1 118.6-118.6S364.5 128.6 299 128.6s-118.6 53.1-118.6 118.6zM467.4 575.7H127.5v-73c0-57.9 47-104.9 104.9-104.9h130c57.9 0 104.9 47 104.9 104.9v73h0.1z m78.5-376.4h291.9c13.2 0 23.9 10.7 23.9 23.9s-10.7 23.9-23.9 23.9H545.9c-13.2 0-23.9-10.7-23.9-23.9s10.7-23.9 23.9-23.9z m0 117.3h291.9c13.2 0 23.9 10.7 23.9 23.9s-10.7 23.9-23.9 23.9H545.9c-13.2 0-23.9-10.7-23.9-23.9s10.7-23.9 23.9-23.9z" fill="" p-id="7528"></path><path d="M740 614c33.7 0 65.3 13.1 89.1 36.9 23.8 23.8 36.9 55.4 36.9 89.1s-13.1 65.3-36.9 89.1C805.3 852.9 773.7 866 740 866c-33.7 0-65.3-13.1-89.1-36.9S614 773.7 614 740s13.1-65.3 36.9-89.1c23.8-23.8 55.4-36.9 89.1-36.9m0-64c-104.9 0-190 85.1-190 190s85.1 190 190 190 190-85.1 190-190-85.1-190-190-190z" fill="" p-id="7529"></path><path d="M550.5 527.9l-22.6 22.6c-6.2 6.2-6.2 16.4 0 22.6l103.3 103.3c10.9-18.7 26.6-34.3 45.3-45.3L573.1 527.9c-6.2-6.3-16.4-6.3-22.6 0zM756 456h-32c-8.8 0-16 7.2-16 16v146.1c10.2-2.7 20.9-4.1 32-4.1s21.8 1.4 32 4.1V472c0-8.8-7.2-16-16-16zM614 740c0-11.1 1.4-21.8 4.1-32H472c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h146.1c-2.7-10.2-4.1-20.9-4.1-32z m234.8-63.6l103.3-103.3c6.2-6.2 6.2-16.4 0-22.6l-22.6-22.6c-6.2-6.2-16.4-6.2-22.6 0L803.6 631.2c18.6 10.9 34.3 26.6 45.2 45.2z m0 127.2c-10.9 18.7-26.6 34.3-45.3 45.3l103.3 103.3c6.2 6.2 16.4 6.2 22.6 0l22.6-22.6c6.2-6.2 6.2-16.4 0-22.6L848.8 803.6zM1008 708H861.9c2.7 10.2 4.1 20.9 4.1 32s-1.4 21.8-4.1 32H1008c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM708 861.9V1008c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V861.9c-10.2 2.7-20.9 4.1-32 4.1s-21.8-1.4-32-4.1z m-76.8-58.3L527.9 906.9c-6.2 6.2-6.2 16.4 0 22.6l22.6 22.6c6.2 6.2 16.4 6.2 22.6 0l103.3-103.3c-18.6-10.9-34.3-26.6-45.2-45.2z" fill="" p-id="7530"></path></svg><span>账户管理</span></div>
+      <ul>
+        <li class="lbx">会员列表</li>
+        <li class="lbx">管理员列表</li>
+        <li class="lbx">修改账户信息</li>
+        <li class="lbx">新增账户</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="main">
+
+    <div class="main_child"><!--首页-->
+      <div class="child_flex">
+        <div class="top1">
+
+          <div class="jjdb"><!--紧急待办-->
+            <h2><span>紧急待办</span></h2>
+
+            <div class="b">
+
+              <div class="single">
+                <div class="top">
+                  待支付
+                </div>
+                <div class="bottom">
+
+                </div>
+              </div>
+              
+              <div class="single">
+                <div class="top">
+                  待发货
+                </div>
+                <div class="bottom">
+                  
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="zjlogin"><!--最近登录-->
+            <h2><span>最近登录</span></h2>
+            <div><!--登录列表-->
+              <ul>
+                <li>昵称</li>
+                <li>登录时间</li>
+                <li>登录 IP</li>
+              </ul>
+              <!--<ul>
+                <li>刃舞</li>
+                <li>asdasd</li>
+                <li>1245132</li>
+              </ul>-->
+            </div>
+          </div>
+
+          <div class="czrz"><!--操作日志-->
+            <h2><span>操作日志</span></h2>
+
+            <div>
+              <ul>
+                <li>昵称</li>
+                <li>操作时间</li>
+                <li>使用权限</li>
+                <li>操作 IP</li>
+              </ul>
+              <!--<ul>
+                <li>刃舞</li>
+                <li>asdasd</li>
+                <li>1245132</li>
+                <li>12451asd32</li>
+              </ul>-->
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="bottom1">
+
+          <div class="ddtj"><!--订单统计-->
+            <h2><span>订单统计</span></h2>
+            <div>
+              <div class="ddtjCharts"></div>
+            </div>
+          </div>
+
+          <div class="uhtj"><!--用户统计-->
+            <h2><span>用户统计</span></h2>
+            <div>
+              <div class="uhtjCharts"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child"><!--商品列表-->
+      <div class="child_flex">
+
+        <div class="sech2"><!--搜索区-->
+          <input type="text" placeholder="请输入商品名称关键字，关键字间以“空格”隔开"><div class="btn">搜索</div>
+        </div>
+        
+        <div class="dir2"><!--目录外层盒子-->
+          <div class="up">上一级</div>
+          <ul class="dir2_child"><!--目录盒子-->
+            
+          </ul>
+        </div>
+
+        <div class="splb2"><!--商品列表-->
+          <ul>
+            <li>id</li>
+            <li>商品名</li>
+            <li>level</li>
+            <li>分类名</li>
+            <li>封面</li>
+            <li>售价</li>
+            <li>推荐</li>
+            <li>额外属性（JSON）</li>
+            <li>操作</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="main_child"><!--上架商品-->
+      <div class="child_flex">
+        <div class="dir3"><!--目录外层盒子-->
+          <div class="up">上一级</div>
+          <ul class="dir3_child"><!--目录盒子-->
+            
+          </ul>
+          <div class="add"><svg t="1559626449644" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1638" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M512 0C229.230364 0 0 229.230364 0 512s229.230364 512 512 512 512-229.230364 512-512C1023.6928 229.357796 794.642204 0.3072 512 0z m0 912.574009C290.769351 912.574009 111.425991 733.230649 111.425991 512S290.769351 111.425991 512 111.425991 912.574009 290.769351 912.574009 512C912.266809 733.104356 733.104356 912.267947 512 912.574009z" fill="#e6e6e6" p-id="1639"></path><path d="M677.449956 458.340124h-109.554347V348.785778c0-30.252373-24.5248-54.777173-54.777173-54.777174-30.253511 0-54.778311 24.5248-54.778312 54.777174v109.554346H348.785778c-30.252373 0-54.777173 24.5248-54.777174 54.778312 0 30.252373 24.5248 54.777173 54.777174 54.777173h109.554346v109.554347c0 30.253511 24.5248 54.777173 54.778312 54.777173 30.252373 0 54.777173-24.5248 54.777173-54.777173v-109.554347h109.554347c30.253511 0 54.777173-24.5248 54.777173-54.777173 0-30.253511-24.5248-54.778311-54.777173-54.778312z" fill="#e6e6e6" p-id="1640"></path></svg></div><!--点击添加子类、商品-->
+          <ul class="add_class">
+            <li>商品类</li>
+            <li>商品</li>
+          </ul>
+        </div>
+
+        <div class="form3"><!--表单区-->
+          <form class="sp_class_form" action="#"><!--商品类表单-->
+            <label><span class="input">商品类名称：</span><input name="name" type="text" placeholder="请输入商品类名称"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+          <form class="sp_form" action="#" enctype="multipart/form-data"><!--商品表单-->
+            
+          </form>
+        </div>
+
+        <div class="zdlb3">
+          <ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child"><!--修改商品-->
+      <div class="child_flex">
+        <div class="form4">
+          <form action="#">
+            <label><span class="input">商品 id：</span><input name="id" type="text" placeholder="请输入商品 id"></label>
+            <label><span class="input">修改类型：</span><input name="type" type="text" placeholder="请输入“name”或“extra”"></label>
+            <label><span class="input">key：</span><input name="k" type="text" placeholder="请输入“ex” 的 key，若是 name 则请输入 “null”"></label>
+            <label><span class="input">eq：</span><input name="eq" type="text" placeholder="请输入是上面 key 下的第几个值，若只有一个值写“0”，若是 name 则请输入任意数字"></label>
+            <label><span class="input">val：</span><input name="v" type="text" placeholder="请输入修改后的值"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child"><!--分类推荐-->
+      <div class="child_flex">
+        
+        <div class="sp_class_dir5"><!--商品类目录-->
+          <div class="up">上一级</div>
+          <ul class="dir5_child"><!--目录盒子-->
+
+          </ul>
+        </div>
+
+        <div class="sp_dir5"><!--该类下的商品目录-->
+          
+        </div>
+
+        <div class="sp_tj_dir5"><!--该类推荐商品目录-->
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="main_child">
+      <div class="child_flex">
+
+        <div class="ewlb6"><!--额外字段列表-->
+          
+        </div>
+
+        <div class="zs6"><!--用于展示属性值的盒子-->
+          <form action="#">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div class="flex6">
+              <div class="edt6">编辑</div>
+              <div class="enter6">确定</div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form6"><!--表单区-->
+          <form action="#">
+            <label><div class="input">k：</div><input name="k" type="text" placeholder="必填，不得与已有 k 重复"></label>
+            <label><div class="input">中文名：</div><input name="name" type="text" placeholder="必填"></label>
+            <label><div class="input">是否常用：</div><input name="often" type="text" placeholder="必填，是/否"></label>
+            <label><div class="input">自定义 html 标签：</div><input name="html" type="text" placeholder="可选，不用于展示的属性可以写 null"></label>
+            <label><div class="input">自定义 css 样式：</div><input name="css" type="text" placeholder="可选，同上"></label>
+            <label><div class="input">属性备注：</div><input name="bz" type="text" placeholder="必填，第一个单词代表 input 的 type，用“,”隔开"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+        </div>
+          
+      </div>
+    </div>
+
+    <div class="main_child">
+      <div class="child_flex">
+
+        <div class="ddlb7"><!--订单列表-->
+          <ul>
+            <li>订单号</li>
+            <li>订单状态</li>
+            <li>发货状态</li>
+            <li>订单总额</li>
+            <li>下单时间</li>
+            <li>用户名</li>
+            <li>收货人手机号</li>
+            <li>收货地址</li>
+            <li>支付状态</li>
+            <li>操作</li>
+          </ul>
+          <!--<ul>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li>woeahj</li>
+            <li><svg class="ck" t="1560241488485" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"  xmlns="http://www.w3.org/2000/svg" p-id="2187" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32">  <defs>    <style type="text/css"></style>  </defs>  <path    d="M819.2 563.2c-113.1 0-204.8 91.7-204.8 204.8 0 113.1 91.7 204.8 204.8 204.8 24.2 0 47-4.9 68.6-12.6l48.8 48.8c20 20 52.4 20 72.4 0 20-20 20-52.4 0-72.4l-35.4-35.4c31-35.9 50.4-82.1 50.4-133.2 0-113.1-91.7-204.8-204.8-204.8z"    fill="#bfbfbf" p-id="2188"></path>  <path    d="M921.6 0H102.4C46.1 0 0 46.1 0 102.4v819.2C0 977.9 46.1 1024 102.4 1024h547.1C566.7 969 512 874.9 512 768c0-169.7 137.5-307.2 307.2-307.2 78.8 0 150.4 29.9 204.8 78.7V102.4C1024 46.1 977.9 0 921.6 0z m-512 716.8H204.8c-28.2 0-51.2-23-51.2-51.2 0-28.2 23-51.2 51.2-51.2h204.8c28.2 0 51.2 23 51.2 51.2 0 28.2-23 51.2-51.2 51.2zM512 512H204.8c-28.2 0-51.2-23-51.2-51.2 0-28.2 23-51.2 51.2-51.2H512c28.2 0 51.2 23 51.2 51.2 0 28.2-23 51.2-51.2 51.2z m307.2-204.8H204.8c-28.2 0-51.2-23-51.2-51.2s23-51.2 51.2-51.2h614.4c28.2 0 51.2 23 51.2 51.2s-23 51.2-51.2 51.2z"    fill="#bfbfbf" p-id="2189"></path></svg></li>
+          </ul>-->
+        </div>
+
+        <div class="fenye7"><!--分页按钮-->
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>》</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child">
+      <div class="child_flex">
+
+        <div class="dfhlb8"><!--待发货单列表-->
+          <ul>
+            <li>订单号</li>
+            <li>商品</li>
+            <li>订单总额</li>
+            <li>下单时间</li>
+            <li>用户名</li>
+            <li>收货人手机号</li>
+            <li>收货地址</li>
+            <li>支付状态</li>
+          </ul>
+          <!--<ul class="active">
+            <li>kjngk</li>
+            <li><img src="/static/iva/138_photo_1_.jpg"><img src="/static/iva/138_photo_1_.jpg"><img src="/static/iva/138_photo_1_.jpg"></li>
+            <li>kjngk</li>
+            <li>kjngk</li>
+            <li>kjngk</li>
+            <li>kjngk</li>
+            <li>kjngk</li>
+            <li>kjngk</li>
+          </ul>-->
+        </div>
+
+        <form class="form8" action="">
+          <label><div class="input">快递公司：</div><input name="kd" type="text" placeholder="请输入负责运送的快递公司名"></label>
+          <label><div class="input">快递单号：</div><input name="kddh" type="text" placeholder="请输入快递单号"></label>
+          <label><div class="btn"><div>提</div><div>交</div></div></label>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="main_child">
+      9
+    </div>
+
+    <div class="main_child">
+      10
+    </div>
+
+    <div class="main_child"><!--总营业额-->
+      <div class="child_flex">
+      
+        <div class="top11">
+          <div class="tj"></div>
+        </div>
+      
+        <div class="bottom11">
+          <div class="lb">
+            <ul>
+              <li>日期</li>
+              <li>营业额</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="main_child"><!--总订单量-->
+      <div class="child_flex">
+      
+        <div class="top12">
+          <div class="tj"></div>
+        </div>
+      
+        <div class="bottom12">
+          <div class="lb">
+            <ul>
+              <li>日期</li>
+              <li>订单量</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="main_child"><!--总成交量-->
+      <div class="child_flex">
+      
+        <div class="top13">
+          <div class="tj"></div>
+        </div>
+      
+        <div class="bottom13">
+          <div class="lb">
+            <ul>
+              <li>日期</li>
+              <li>成交量</li>
+            </ul>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="main_child">
+    14
+    </div>
+
+    <div class="main_child">
+    15
+    </div>
+
+    <div class="main_child">
+      <div class="child_flex">
+        <div class="userlb16"><!--会员列表-->
+          <ul>
+            <li>id</li>
+            <li>头像</li>
+            <li>昵称</li>
+            <li>密码</li>
+            <li>邮箱</li>
+            <li>地址</li>
+            <li>手机号</li>
+            <li>性别</li>
+            <li>注册时间</li>
+            <li>操作</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child">
+      <div class="child_flex">
+        <div class="adminlb17"><!--管理员列表-->
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child"><!--修改账户信息-->
+      <div class="child_flex">
+        <div class="form18">
+          <form action="#">
+            <label><span class="input">帐号类型：</span><input name="type2" type="text" placeholder="会员请输入“user”，管理员请输入“admin”"></label>
+            <label><span class="input">帐号 id：</span><input name="id" type="text" placeholder="帐号 id"></label>
+            <label><span class="input">修改字段：</span><input name="k" type="text" placeholder="昵称、邮箱、密码、地址、手机号、性别、头像（需上传 file）、角色"></label>
+            <label><span class="input">值：</span><input name="v" type="text" placeholder="请输入修改后的值"></label>
+            <label><span class="input">头像：</span><input name="head" type="file"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main_child"><!--新增账户-->
+      <div class="child_flex">
+
+        <div class="aside19">
+          <ul>
+            <li>用户</li>
+            <li>管理员</li>
+          </ul>
+        </div>
+
+        <div class="form19">
+
+          <form action="" class="user">
+            <label><div class="input">昵称：</div><input name="name" type="text" placeholder="必填"></label>
+            <label><div class="input">邮箱：</div><input name="mail" type="text" placeholder="必填"></label>
+            <label><div class="input">密码：</div><input name="pwd" type="password" placeholder="必填"></label>
+            <label><div class="input">地址：</div><input name="adrs" type="text" placeholder="必填"></label>
+            <label><div class="input">手机号：</div><input name="phone" type="text" placeholder="可选"></label>
+            <label><div class="input">性别：</div><input name="sex" type="text" placeholder="必填"></label>
+            <label><div class="input">头像：</div><input name="head" type="file"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+
+          <form action="" class="admin">
+            <label><div class="input">昵称：</div><input name="name" type="text" placeholder="必填"></label>
+            <label><div class="input">密码：</div><input name="pwd" type="text" placeholder="必填"></label>
+            <label><div class="input">角色：</div><input name="type" type="text" placeholder="必填"></label>
+            <label><div class="btn"><div>提</div><div>交</div></div></label>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+<script src="/extend/jquery-1.12.4.min.js"></script><!--引入 jq-->
+<script src="/extend/scrollbot.min.js"></script><!--滚动条插件-->
+<script src="/extend/scrollreveal.min.js"></script><!--滚动条插件-->
+<script src="/extend/echarts.min.js"></script><!--引入 eCharts-->
+<script src="/static/js/public.js"></script><!--公共函数-->
+<script src="/static/js/index.js"></script><!--初始化-->
+<script src="/static/js/Sy.js"></script><!--后台首页-->
+<script src="/static/js/sp.js"></script><!--商品管理栏各模块-->
+<script src="/static/js/dd.js"></script><!--订单管理栏各模块-->
+<script src="/static/js/money.js"></script><!--财务报表栏各模块-->
+<script src="/static/js/user.js"></script><!--账户管理栏各模块-->
+
+</html>

@@ -1,0 +1,129 @@
+@charset "utf-8";
+@import '_public';
+@import '_u_public';
+
+.spList{
+  margin:0px $lrmargin;
+}
+
+.spList{
+
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  margin-top:50px;
+
+  h2{
+    $h:50px;
+
+    @include wh(100%, $h);
+
+    line-height:$h;
+    font-weight:400;
+    font-size:28px;
+    margin-bottom:20px;
+  }
+
+  figure{
+    @include wh(49%, 460px);
+    @include shadow();
+
+    margin-top:20px;
+
+    .outer{
+      @include wh(100%, 75%);
+
+      display:flex;
+      justify-content:center;
+      cursor:pointer;
+
+      img{
+        height:100%;
+      }
+    }
+
+    figcaption{
+      @include wh(100%, 25%);
+      
+      position:relative;
+
+      .sp_name{
+        @include wh(60%, $fsizel + 12);
+        @include pos(20%,auto,auto,10%,0);
+        @include slh();
+
+        color:darken($fcolor, 30%);
+        font-size:$fsizel + 2;
+      }
+
+      .ms{
+        @include wh(50%, $fsizes + 10);
+        @include pos(50%,auto,auto,10%,0);
+        @include slh();
+
+        color:$fcolor;
+        font-size:$fsizes;
+      }
+
+      .price{
+        @include pos(30%,10%,auto,auto,0);
+        
+        color:$fcolor_price;
+        font-size:$fsizel + 6;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

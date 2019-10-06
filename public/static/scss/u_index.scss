@@ -1,0 +1,501 @@
+@charset "utf-8";
+@import '_public';
+@import '_u_public';
+
+.ul,.lbt_par,.sp_class{
+  margin:0px $lrmargin;
+}
+
+body{
+  background: #f5f5f5;
+}
+
+//轮播区
+.lbt_par{
+  height:480px;
+  position:relative;
+  margin-top:10px;
+
+  //轮播图
+  .lbt{
+    @include wh(100%,480px);
+
+    //小圆点外层
+    .lb_radius{
+      @include wh(10%,10px);
+      @include pos(auto,10px,10px,auto,300);
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      //小圆点样式
+      .lb_radius_c{
+        @include cir(10px);
+
+        cursor:pointer;
+        background:rgba(0,0,0,0.6);
+        border:solid 1px rgba(0,0,0,0.6);
+
+        &:hover{
+          background:rgba(255,255,255,0.6)!important;
+        }
+      }
+    }
+  }
+
+  //一级分类
+  .aside{
+    @include wh(15%,480px);
+    @include pos(0px,auto,auto,0px,20);
+
+    background:rgba(0, 0, 0, 0.5);
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+
+    ul{
+      width:100%;
+
+      li{
+        $h:50px;
+
+        @include wh(90%,$h);
+        @include cen($h);
+
+        display:flex;
+        align-items:center;
+        padding-left:10%;
+        text-align:left;
+        position:relative;
+        font-size:$fsizes - 1;
+        color:$flcolor;
+
+        svg{
+          @include wh($h / 2 - 4, $h / 2 - 4);
+          position:absolute;
+          right:10%;
+        }
+
+        &:hover{
+          background:$bgacolor;
+
+          svg{
+            path{
+              fill:$flcolor;
+            }
+          }
+        }
+      }
+      
+      .active{
+        background:$bgacolor;
+      }
+    }
+  }
+
+  //二级分类
+  .main{
+    @include pos(0px,auto,auto,15%,400);
+    @include wh(85%,480px);
+
+    background:white;
+    display:none;
+    box-shadow:1px 3px 6px rgba(200,200,200,0.5);
+    flex-direction:column;
+    flex-wrap:wrap;
+
+    figure{
+      @include wh(240px,16%);
+
+      display:flex;
+      align-items:center;
+      cursor:pointer;
+      margin:0px 20px;
+
+      img{
+        @include wh(20%,70%);
+
+        margin:0px 2%;
+      }
+
+      figcaption{
+        @include wh(64%,20px);
+        @include slh();
+        
+        padding:0px 5%;
+        font-size:$fsizes - 2;
+
+        &:hover{
+          color:$fcolor;
+        }
+      }
+    }
+  }
+}
+
+//商品类
+.sp_class{
+  $h:320px;                       //单个 figure 高度
+  $jjh:10px;                      //垂直间距
+  $top:40px;                      //顶部高度
+
+  display:flex;
+  flex-wrap:wrap;
+  height:$h * 2 + $jjh * 2 + $top;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  //顶部
+  .top{
+    @include wh(100%, $top);
+
+    display:flex;
+
+    //标题
+    h2{
+      @include wh(20%, $top);
+      @include cen($top);
+
+      text-align:left;
+      padding-left:20px;
+      font-size:$fsizel + 2;
+      font-weight:400;
+      color:$fcolor;
+    }
+
+    //二级分类
+    ul{
+      @include wh(40%, $top);
+
+      margin-left:40%;
+      display:flex;
+      justify-content:flex-end;
+
+      li{
+        @include wh(15%,60px);
+        @include cen(50px);
+
+        color:$fcolor;
+        cursor:pointer;
+
+        &:hover{
+          border-bottom:solid 2px #666;
+          color:#666;
+        }
+      }
+
+      .active{
+        border-bottom:solid 2px #666;
+        color:#666;
+      }
+    }
+  }
+
+  //推荐商品
+  .aside{
+    @include wh(20%, $h * 2);
+
+    display:flex;
+    flex-direction:column;
+    margin-right:3%;
+
+    img{
+      @include wh(100%, $h - 20px);
+      @include shadow();
+      flex-grow:1;
+
+      margin:$jjh;
+      cursor:pointer;
+    }
+  }
+
+  //子类商品
+  .main{
+    @include wh(77%, $h * 2);
+
+    display:none;
+    flex-wrap:wrap;
+
+    figure{
+      @include wh(23%, $h - 20px);
+      @include shadow();
+
+      background:white;
+      border-radius:2px;
+      margin:$jjh 1%;
+
+      img{
+        @include wh(100%,70%);
+        cursor:pointer;
+      }
+
+      figcaption{
+        @include wh(100%,30%);
+
+        div{
+          @include wh(100%,30px);
+          @include cen(30px);
+          @include slh();
+
+          font-size:$fsizes - 2;
+        }
+
+        .price{
+          color:$fcolor_price;
+        }
+      }
+    }
+
+    .llgd{
+      @include wh(23%, $h - 20px);
+      @include shadow();
+
+      background:white;
+      border-radius:2px;
+      margin:$jjh 1%;
+      cursor:pointer;
+
+      .name{
+        @include wh(20px, 50%);
+
+        color:$fcolor;
+        padding:20% 0% 0% 44%;
+        font-size:$fsizel + 4;
+      }
+
+      .svg{
+        @include wh(40px, 50%);
+
+        margin-left:36%;
+
+        svg{
+          @include rect(60px);
+        }
+      }
+    }
+  }
+}
+
+//为你推荐
+.b_recom{
+  width:100% - $lrmargin * 2;
+  margin:20px $lrmargin;
+  display:flex;
+  flex-wrap:wrap;
+
+  //顶部
+  .recom_top{
+    @include wh(100%,60px);
+
+    display:flex;
+    justify-content:space-between;
+
+    h2{
+      @include wh(30%,60px);
+      @include cen(60px);
+
+      font-size:$fsizel + 2;
+      color:$fcolor;
+      text-align:left;
+      font-weight:400;
+      padding-left:20px;
+    }
+
+    //控件组
+    .contr{
+      @include wh(10%,60px);
+
+      display:flex;
+      align-items:center;
+
+      div{
+        @include wh(40%,30px);
+        @include cen(30px);
+
+        border:1px solid rgba(160,160,160,0.4);
+        cursor:pointer;
+
+        svg{
+          @include wh(40%,30px);
+          @include cen(30px);
+
+          path{
+            fill:$facolor;
+          }
+        }
+
+        &:hover{
+          svg{
+            path{
+              fill:lighten($facolor,20%);
+            }
+          }
+        }
+      }
+
+      .l{
+        border-right:none;
+      }
+    }
+  }
+
+  .recom_b{
+    @include wh(100%,320px);
+
+    display:flex;
+    overflow:hidden;
+    align-items:center;
+
+    figure{
+      @include wh(23%,300px);
+      @include shadow();
+
+      margin:20px 1%;
+      background:white;
+      flex-shrink:0;
+
+      .outer{
+        @include wh(100%,60%);
+
+        cursor:pointer;
+        display:flex;
+        justify-content:center;
+
+        img{
+          height:100%;
+        }
+      }
+
+      figcaption{
+        @include wh(100%,40%);
+
+        padding:0px 20%;
+
+        .name{
+          @include wh(60%,25%);
+          @include slh();
+
+          line-height:30px;
+          color:darken($fcolor,30%);
+          text-align:center;
+          font-size:$fsizes - 2;
+        }
+
+        .price{
+          @include wh(60%,25%);
+
+          line-height:30px;
+          color:$fcolor_price;
+          text-align:center;
+          font-size:$fsizes - 2;
+        }
+
+        .good{
+          @include wh(60%,30%);
+
+          line-height:40px;
+          text-align:center;
+          color:$fcolor;
+          font-size:$fsizes - 1;
+        }
+      }
+    }
+  }
+}
+
+//热点产品
+.hot{
+  width:100% - $lrmargin * 2;
+  margin:0px $lrmargin;
+  display:flex;
+  flex-wrap:wrap;
+
+  h2{
+    @include wh(100%,60px);
+    @include cen(60px);
+
+    font-size:$fsizel + 2;
+    color:$fcolor;
+    text-align:left;
+    font-weight:400;
+    padding-left:20px;
+  }
+
+  figure{
+    @include wh(23%,420px);
+    @include shadow();
+
+    margin:0px 1%;
+    background:white;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    img{
+      height:50%;
+      cursor:pointer;
+    }
+
+    figcaption{
+      @include wh(100%,50%);
+
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+
+      .nr{
+        @include wh(80%,40%);
+
+        margin-top:10%;
+        color:darken($fcolor,30%);
+        font-size:$fsizes - 3;
+        line-height:1.6em;
+      }
+
+      .hot_user{
+        @include wh(80%,10%);
+        @include slh();
+
+        line-height:20px;
+        color:$fcolor;
+        font-size:$fsizes - 4;
+      }
+
+      .hot_name{
+        @include wh(80%, 30%);
+
+        display:flex;
+        font-size:$fsizes - 2;
+        line-height:50px;
+        color:darken($fcolor, 30%);
+
+        .name{
+          @include wh(70%, 100%);
+          @include slh();
+        }
+        
+        .price{
+          color:$fcolor_price;
+          display:inline-block;
+          padding-left:6px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

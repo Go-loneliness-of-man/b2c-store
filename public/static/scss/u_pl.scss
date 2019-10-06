@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import '_public';
+@import '_u_public';
+
+.pl{
+  margin:20px $lrmargin;
+}
+
+.star{
+  @include wh(100%, 200px);
+
+  .top{
+    @include wh(100%, 80%);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    svg{
+      @include rect(150px);
+
+      cursor:pointer;
+      
+      path{
+        fill:rgb(255, 247, 0);
+      }
+    }
+  }
+
+  .b{
+    @include wh(100%, 40px);
+    @include cen(40px);
+
+    font-size:24px;
+    letter-spacing:1em;
+    color:#666;
+  }
+}
+
+.nr{
+  @include wh(100%, 300px);
+
+  form{
+    @include wh(100%, 300px);
+
+    display:flex;
+    margin-top:40px;
+
+    textarea{
+      @include wh(92%, 300px);
+
+      margin:0px;
+      color:$fcolor;
+      font-size:$fsizel;
+      padding:10px;
+    }
+
+    .btn{
+      @include wh(8%, 322px);
+
+      background:$fcolor;
+      color:$flcolor;
+      position:relative;
+      left:-15px;
+      cursor:pointer;
+
+      div{
+        @include wh(100%, 25%);
+        @include cen(75px);
+
+        font-size:20px;
+      }
+
+      &:hover{
+        background:$bgaacolor;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

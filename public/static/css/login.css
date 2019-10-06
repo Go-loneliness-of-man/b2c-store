@@ -1,0 +1,148 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+#inq {
+  width: 30%;
+  height: 22%;
+  position: absolute;
+  top: 24%;
+  right: auto;
+  bottom: auto;
+  left: 35%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+}
+#inq .inq_top {
+  width: 90%;
+  height: 40%;
+  padding: 4%;
+  text-indent: 2em;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+#inq .inq_bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+#inq .inq_bottom .yes, #inq .inq_bottom .no {
+  width: 40%;
+  height: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 17px;
+}
+#inq .inq_bottom .yes {
+  background: #17a840;
+}
+#inq .inq_bottom .yes:hover {
+  background: #5FB878;
+}
+#inq .inq_bottom .no {
+  background: #21242c;
+}
+#inq .inq_bottom .no:hover {
+  background: #3A3D49;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.3);
+  width: 40%;
+  padding: 0px 0px 40px 0px;
+  border-radius: 10px;
+  position: absolute;
+  top: 22%;
+  left: 30%;
+}
+form h2 {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 40px;
+  color: #6e6e6e;
+  transition: all 0.6s;
+}
+form:hover h2 {
+  color: #f0f0f0;
+  font-size: 30px;
+}
+form label {
+  width: 100%;
+  height: 50px;
+  display: block;
+  transition: all 0.6s;
+}
+form label .input {
+  width: 10%;
+  height: 50px;
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 5%;
+  color: #6e6e6e;
+  transition: all 0.6s;
+}
+form label input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-size: 18px;
+  background: transparent;
+  color: #6e6e6e;
+  transition: all 0.6s;
+}
+form label .btn {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 26%;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  border-radius: 10px;
+  margin-left: 70%;
+  opacity: 0.6;
+  cursor: pointer;
+  transform: translateY(4px);
+  transition: all 0.6s;
+  color: #6e6e6e;
+}
+form label .btn:hover {
+  font-size: 24px;
+  color: #f0f0f0;
+  background: rgba(0, 0, 0, 0.6);
+}
+form label:hover {
+  transform: translateY(-4px);
+}
+form label:hover .input, form label:hover input {
+  color: #f0f0f0;
+}
+form label:hover input {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+form label:nth-child(3), form label:nth-child(4) {
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=login.css.map */

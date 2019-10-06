@@ -1,0 +1,489 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+#inq {
+  width: 30%;
+  height: 22%;
+  position: absolute;
+  top: 24%;
+  right: auto;
+  bottom: auto;
+  left: 35%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+}
+#inq .inq_top {
+  width: 90%;
+  height: 40%;
+  padding: 4%;
+  text-indent: 2em;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+#inq .inq_bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+#inq .inq_bottom .yes, #inq .inq_bottom .no {
+  width: 40%;
+  height: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 17px;
+}
+#inq .inq_bottom .yes {
+  background: #17a840;
+}
+#inq .inq_bottom .yes:hover {
+  background: #5FB878;
+}
+#inq .inq_bottom .no {
+  background: #21242c;
+}
+#inq .inq_bottom .no:hover {
+  background: #3A3D49;
+}
+
+.nav_top {
+  width: 100%;
+  height: 40px;
+  background: #373c49;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_top ul {
+  width: 20%;
+  height: 40px;
+  display: flex;
+}
+.nav_top ul:nth-child(1) {
+  justify-content: flex-end;
+}
+.nav_top ul:nth-child(2) {
+  justify-content: flex-start;
+}
+.nav_top ul li {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 30%;
+  height: 40px;
+  color: #a1a1a1;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav_top ul li:hover {
+  color: #f0f0f0;
+  background: #676c82;
+}
+
+nav {
+  margin: 0px 13%;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+nav .logo {
+  width: 60px;
+  height: 60px;
+  background: url(/static/iva/logo.PNG) center/cover;
+}
+nav ul {
+  width: 60%;
+  height: 80px;
+  display: flex;
+  margin-left: 10%;
+}
+nav ul li {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  width: 15%;
+  height: 80px;
+  font-size: 16px;
+  color: #3b3b3b;
+  cursor: pointer;
+}
+nav ul li:hover {
+  color: #969696;
+}
+nav form {
+  width: 25%;
+  height: 40px;
+  display: flex;
+}
+nav form input {
+  width: 85%;
+  height: 40px;
+  font-size: 18px;
+  padding-left: 10px;
+  border: solid 1px #ccc;
+}
+nav form input:focus {
+  border: solid 1px #aaa;
+}
+nav form div {
+  width: 15%;
+  height: 40px;
+  border: solid 1px #ccc;
+  border-left: none;
+  transition: all 0.6s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav form div svg {
+  width: 80%;
+  height: 80%;
+}
+nav form div svg:hover path {
+  fill: white;
+}
+nav form div:hover {
+  background: #aaa;
+}
+
+.recom {
+  width: 100%;
+  height: 240px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+  height: 0px;
+  overflow: hidden;
+  background: white;
+}
+.recom .child {
+  width: 74%;
+  height: 240px;
+  display: flex;
+}
+.recom .child figure {
+  width: 140px;
+  height: 240px;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+.recom .child figure img {
+  width: 100%;
+  height: 60%;
+  padding: 0px 20px;
+  margin-top: 16%;
+  border-left: solid 1px rgba(209, 207, 207, 0.5);
+  border-right: solid 1px rgba(209, 207, 207, 0.5);
+}
+.recom .child figure figcaption {
+  width: 100%;
+  height: 30%;
+  padding: 0px 20px;
+}
+.recom .child figure figcaption .name {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+}
+.recom .child figure figcaption .price {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: #ff6700;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  background: white;
+}
+.bottom .b_top {
+  width: 100%;
+  height: 80px;
+  margin: 0px 13%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.bottom .b_top ul {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.bottom .b_top ul li {
+  width: 20%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: #6e6e6e;
+}
+.bottom .b_top ul li:nth-child(5) {
+  border-right: none;
+}
+.bottom .b_bottom {
+  width: 59.2%;
+  margin: 30px 0px 0px 13%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+.bottom .b_bottom .b_child {
+  width: 16%;
+}
+.bottom .b_bottom .b_child h3 {
+  width: 100%;
+  height: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #3b3b3b;
+  font-size: 18px;
+  font-weight: 400;
+}
+.bottom .b_bottom .b_child ul {
+  width: 100%;
+}
+.bottom .b_bottom .b_child ul li {
+  width: 100%;
+  height: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin: 8px 0px;
+}
+.bottom .kf {
+  width: 14%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bottom .kf .phone {
+  width: 80%;
+  height: 10%;
+  height: 10%;
+  line-height: 10%;
+  text-align: center;
+  font-size: 22px;
+  color: #6e6e6e;
+  margin-top: 20%;
+}
+.bottom .kf .fuzhu {
+  width: 60%;
+  height: 30%;
+  font-size: 12px;
+  text-align: center;
+  color: #6e6e6e;
+}
+.bottom .kf .lxkf {
+  width: 60%;
+  height: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  text-align: center;
+  color: #6e6e6e;
+  cursor: pointer;
+  font-size: 15px;
+}
+.bottom .kf .lxkf:hover {
+  background: #21242c;
+  color: #f0f0f0;
+}
+.bottom .b_friend {
+  width: 100%;
+  height: 100px;
+  margin: 20px 13%;
+  display: flex;
+  align-items: center;
+}
+.bottom .b_friend .logo {
+  width: 60px;
+  height: 60px;
+  background: url(/static/iva/logo.PNG) center/cover;
+  margin: 0% 10%;
+}
+.bottom .b_friend .ms {
+  width: 70%;
+  height: 60px;
+  font-size: 18px;
+  color: #6e6e6e;
+}
+
+.ad {
+  width: 74%;
+  height: 120px;
+  margin: 0px 13%;
+  cursor: pointer;
+}
+.ad img {
+  width: 100%;
+  height: 100%;
+}
+
+.result {
+  margin: 20px 13%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.result figure {
+  width: 24%;
+  height: 430px;
+  transition: all 0.6s;
+  margin: 10px 1% 0px 0px;
+  background: white;
+}
+.result figure:hover {
+  transform: translate(auto, -3px);
+  box-shadow: 0px 3px 24px #aaa;
+}
+.result figure .outer {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.result figure .outer img {
+  max-width: 100%;
+  height: 100%;
+}
+.result figure figcaption {
+  width: 100%;
+  height: 32%;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.result figure figcaption .sp_name {
+  width: 70%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+.result figure figcaption .price {
+  width: 70%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #ff6700;
+  font-size: 20px;
+}
+.result figure figcaption .style {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.result figure figcaption .style img {
+  height: 100%;
+  margin: 0px 4px;
+  border: solid 2px rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+}
+.result figure figcaption .style .active {
+  border: solid 2px #ff6700;
+}
+
+.xq {
+  margin: 20px 13%;
+}
+
+.state {
+  width: 100%;
+  height: 200px;
+}
+.state .text {
+  width: 100%;
+  height: 60px;
+  display: flex;
+}
+.state .text div {
+  width: 20%;
+  height: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: #6e6e6e;
+  font-weight: 600;
+}
+.state .state_b {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.state .state_b .radius {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  line-height: 70px;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 40px;
+  border: solid 6px #ccc;
+  background: #ccc;
+}
+.state .state_b .radius:nth-child(1) {
+  margin-left: 5.5%;
+}
+.state .state_b .bar {
+  width: 14%;
+  height: 15px;
+  font-size: 40px;
+  border-top: solid 6px #ccc;
+  border-bottom: solid 6px #ccc;
+  position: relative;
+  right: 0px;
+  z-index: -1;
+  background: #ccc;
+}
+.state .state_b .active {
+  background: #009349;
+}
+
+/*# sourceMappingURL=u_ddxq.css.map */

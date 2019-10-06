@@ -1,0 +1,886 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+#inq {
+  width: 30%;
+  height: 22%;
+  position: absolute;
+  top: 24%;
+  right: auto;
+  bottom: auto;
+  left: 35%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+}
+#inq .inq_top {
+  width: 90%;
+  height: 40%;
+  padding: 4%;
+  text-indent: 2em;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+#inq .inq_bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+#inq .inq_bottom .yes, #inq .inq_bottom .no {
+  width: 40%;
+  height: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 17px;
+}
+#inq .inq_bottom .yes {
+  background: #17a840;
+}
+#inq .inq_bottom .yes:hover {
+  background: #5FB878;
+}
+#inq .inq_bottom .no {
+  background: #21242c;
+}
+#inq .inq_bottom .no:hover {
+  background: #3A3D49;
+}
+
+.nav_top {
+  width: 100%;
+  height: 40px;
+  background: #373c49;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_top ul {
+  width: 20%;
+  height: 40px;
+  display: flex;
+}
+.nav_top ul:nth-child(1) {
+  justify-content: flex-end;
+}
+.nav_top ul:nth-child(2) {
+  justify-content: flex-start;
+}
+.nav_top ul li {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 30%;
+  height: 40px;
+  color: #a1a1a1;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav_top ul li:hover {
+  color: #f0f0f0;
+  background: #676c82;
+}
+
+nav {
+  margin: 0px 13%;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+nav .logo {
+  width: 60px;
+  height: 60px;
+  background: url(/static/iva/logo.PNG) center/cover;
+}
+nav ul {
+  width: 60%;
+  height: 80px;
+  display: flex;
+  margin-left: 10%;
+}
+nav ul li {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  width: 15%;
+  height: 80px;
+  font-size: 16px;
+  color: #3b3b3b;
+  cursor: pointer;
+}
+nav ul li:hover {
+  color: #969696;
+}
+nav form {
+  width: 25%;
+  height: 40px;
+  display: flex;
+}
+nav form input {
+  width: 85%;
+  height: 40px;
+  font-size: 18px;
+  padding-left: 10px;
+  border: solid 1px #ccc;
+}
+nav form input:focus {
+  border: solid 1px #aaa;
+}
+nav form div {
+  width: 15%;
+  height: 40px;
+  border: solid 1px #ccc;
+  border-left: none;
+  transition: all 0.6s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav form div svg {
+  width: 80%;
+  height: 80%;
+}
+nav form div svg:hover path {
+  fill: white;
+}
+nav form div:hover {
+  background: #aaa;
+}
+
+.recom {
+  width: 100%;
+  height: 240px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s;
+  height: 0px;
+  overflow: hidden;
+  background: white;
+}
+.recom .child {
+  width: 74%;
+  height: 240px;
+  display: flex;
+}
+.recom .child figure {
+  width: 140px;
+  height: 240px;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+.recom .child figure img {
+  width: 100%;
+  height: 60%;
+  padding: 0px 20px;
+  margin-top: 16%;
+  border-left: solid 1px rgba(209, 207, 207, 0.5);
+  border-right: solid 1px rgba(209, 207, 207, 0.5);
+}
+.recom .child figure figcaption {
+  width: 100%;
+  height: 30%;
+  padding: 0px 20px;
+}
+.recom .child figure figcaption .name {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+}
+.recom .child figure figcaption .price {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 11px;
+  color: #ff6700;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  background: white;
+}
+.bottom .b_top {
+  width: 100%;
+  height: 80px;
+  margin: 0px 13%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.bottom .b_top ul {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.bottom .b_top ul li {
+  width: 20%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: #6e6e6e;
+}
+.bottom .b_top ul li:nth-child(5) {
+  border-right: none;
+}
+.bottom .b_bottom {
+  width: 59.2%;
+  margin: 30px 0px 0px 13%;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+.bottom .b_bottom .b_child {
+  width: 16%;
+}
+.bottom .b_bottom .b_child h3 {
+  width: 100%;
+  height: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #3b3b3b;
+  font-size: 18px;
+  font-weight: 400;
+}
+.bottom .b_bottom .b_child ul {
+  width: 100%;
+}
+.bottom .b_bottom .b_child ul li {
+  width: 100%;
+  height: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin: 8px 0px;
+}
+.bottom .kf {
+  width: 14%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bottom .kf .phone {
+  width: 80%;
+  height: 10%;
+  height: 10%;
+  line-height: 10%;
+  text-align: center;
+  font-size: 22px;
+  color: #6e6e6e;
+  margin-top: 20%;
+}
+.bottom .kf .fuzhu {
+  width: 60%;
+  height: 30%;
+  font-size: 12px;
+  text-align: center;
+  color: #6e6e6e;
+}
+.bottom .kf .lxkf {
+  width: 60%;
+  height: 20%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  text-align: center;
+  color: #6e6e6e;
+  cursor: pointer;
+  font-size: 15px;
+}
+.bottom .kf .lxkf:hover {
+  background: #21242c;
+  color: #f0f0f0;
+}
+.bottom .b_friend {
+  width: 100%;
+  height: 100px;
+  margin: 20px 13%;
+  display: flex;
+  align-items: center;
+}
+.bottom .b_friend .logo {
+  width: 60px;
+  height: 60px;
+  background: url(/static/iva/logo.PNG) center/cover;
+  margin: 0% 10%;
+}
+.bottom .b_friend .ms {
+  width: 70%;
+  height: 60px;
+  font-size: 18px;
+  color: #6e6e6e;
+}
+
+.ad {
+  width: 74%;
+  height: 120px;
+  margin: 0px 13%;
+  cursor: pointer;
+}
+.ad img {
+  width: 100%;
+  height: 100%;
+}
+
+.result {
+  margin: 20px 13%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.result figure {
+  width: 24%;
+  height: 430px;
+  transition: all 0.6s;
+  margin: 10px 1% 0px 0px;
+  background: white;
+}
+.result figure:hover {
+  transform: translate(auto, -3px);
+  box-shadow: 0px 3px 24px #aaa;
+}
+.result figure .outer {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.result figure .outer img {
+  max-width: 100%;
+  height: 100%;
+}
+.result figure figcaption {
+  width: 100%;
+  height: 32%;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.result figure figcaption .sp_name {
+  width: 70%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+.result figure figcaption .price {
+  width: 70%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #ff6700;
+  font-size: 20px;
+}
+.result figure figcaption .style {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.result figure figcaption .style img {
+  height: 100%;
+  margin: 0px 4px;
+  border: solid 2px rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+}
+.result figure figcaption .style .active {
+  border: solid 2px #ff6700;
+}
+
+.yh {
+  margin: 0px 13%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.yh .aside {
+  width: 15%;
+  height: 100%;
+  background: white;
+}
+.yh .aside ul li {
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  text-align: left;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+}
+.yh .aside ul li:hover {
+  color: #6e6e6e;
+}
+.yh .main {
+  width: 83%;
+  height: 100%;
+  background: white;
+}
+.yh .main > div {
+  width: 100%;
+  height: 100%;
+  display: none;
+  max-height: 800px;
+  overflow-y: auto;
+}
+.yh .main .dd {
+  flex-wrap: wrap;
+}
+.yh .main .dd_single {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  background: #f2f2f2;
+  margin: 10px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+.yh .main .dd_single .left {
+  width: 40%;
+  height: 100%;
+}
+.yh .main .dd_single .left img {
+  height: 45%;
+  margin: 4px 0px 4px 4px;
+  cursor: pointer;
+}
+.yh .main .dd_single .right {
+  width: 60%;
+  height: 100%;
+}
+.yh .main .dd_single .right .ms {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.yh .main .dd_single .right .ms .single {
+  width: 100%;
+  height: 20px;
+  display: flex;
+}
+.yh .main .dd_single .right .ms .single .sp_name {
+  width: 50%;
+  height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-right: 10%;
+}
+.yh .main .dd_single .right .ms .single .price {
+  width: 20%;
+  height: 20px;
+  font-size: 14px;
+  color: #6e6e6e;
+}
+.yh .main .dd_single .right .ms .single .count {
+  width: 20%;
+  height: 20px;
+  font-size: 14px;
+  color: #6e6e6e;
+}
+.yh .main .dd_single .right .btns {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.yh .main .dd_single .right .btns .btn {
+  width: 20%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.yh .main .dd_single .right .btns .btn:hover {
+  background: #ff6700;
+  color: white;
+}
+.yh .main .user_xx {
+  width: 100%;
+}
+.yh .main .user_xx .img {
+  width: 50%;
+  height: 540px;
+}
+.yh .main .user_xx .img img {
+  display: block;
+  height: 80%;
+  margin: 0px auto;
+  max-width: 100%;
+}
+.yh .main .user_xx .img .btns {
+  width: 100%;
+  height: 20%;
+}
+.yh .main .user_xx .img .btns label {
+  width: 100%;
+  height: 50%;
+}
+.yh .main .user_xx .img .btns label input {
+  display: none;
+}
+.yh .main .user_xx .img .btns label .btn {
+  width: 100%;
+  height: 30px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #666;
+  color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.yh .main .user_xx .img .btns label .btn:hover {
+  background: #222;
+  color: white;
+}
+.yh .main .user_xx .other {
+  width: 50%;
+  height: 540px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1% 2%;
+  overflow-y: auto;
+}
+.yh .main .user_xx .other label {
+  width: 100%;
+  height: 40px;
+  margin: 2px 0px;
+  display: flex;
+  align-items: center;
+}
+.yh .main .user_xx .other label .input {
+  width: 22%;
+  height: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 40px;
+  color: #6e6e6e;
+  display: inline-block;
+  font-size: 16px;
+}
+.yh .main .user_xx .other label input[type="text"], .yh .main .user_xx .other label input[type="password"] {
+  width: 70%;
+  height: 70%;
+  font-size: 18px;
+  color: #6e6e6e;
+  padding: 0px 1%;
+  border: 1px rgba(200, 200, 200, 0.9) solid;
+}
+.yh .main .user_xx .other label input[type="file"] {
+  width: 20%;
+  height: 30px;
+  font-size: 16px;
+  color: #6e6e6e;
+}
+.yh .main .user_xx .other label input:focus, .yh .main .user_xx .other label textarea:focus {
+  box-shadow: 1px 1px 12px #a0a0a0;
+}
+.yh .main .user_xx .other label .btn {
+  width: 40%;
+  height: 40px;
+  margin: 12px auto;
+  background: #676c82;
+  border-radius: 20px;
+  color: #f0f0f0;
+  font-size: 20px;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+.yh .main .user_xx .other label .btn div {
+  width: 34%;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  display: inline-block;
+}
+.yh .main .user_xx .other label .btn:hover {
+  background: #121418;
+  color: #f0f0f0;
+  font-size: 22px;
+}
+.yh .main .user_xx .other label .btn, .yh .main .user_xx .other label .enter {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.yh .main .car {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.yh .main .car .sp {
+  width: 100%;
+}
+.yh .main .car .sp .single {
+  width: 100%;
+  height: 160px;
+  background: #f2f2f2;
+  display: flex;
+  margin: 10px 0px;
+}
+.yh .main .car .sp .single .enter {
+  width: 8%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yh .main .car .sp .single .enter .radius {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  line-height: 16px;
+  text-align: center;
+  border: solid 1px #999;
+  padding: 2px;
+}
+.yh .main .car .sp .single .enter:hover {
+  background: #ddd;
+}
+.yh .main .car .sp .single .outer {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.yh .main .car .sp .single .outer img {
+  height: 100%;
+}
+.yh .main .car .sp .single .right {
+  width: 65%;
+  height: 100%;
+}
+.yh .main .car .sp .single .right .sp_name {
+  width: 100%;
+  height: 30%;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 22px;
+  color: #6e6e6e;
+  text-align: left;
+}
+.yh .main .car .sp .single .right .ms {
+  width: 100%;
+  height: 20%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: #a1a1a1;
+  text-align: left;
+}
+.yh .main .car .sp .single .right .price {
+  width: 100%;
+  height: 20%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 24px;
+  color: #ff6700;
+  text-align: left;
+}
+.yh .main .car .sp .single .right .count {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.yh .main .car .sp .single .right .count .jian, .yh .main .car .sp .single .right .count .add, .yh .main .car .sp .single .right .count .num {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #a1a1a1;
+  border: solid 1px rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+}
+.yh .main .car .sp .single .right .count .jian {
+  border-right: none;
+}
+.yh .main .car .sp .single .right .count .num {
+  color: #6e6e6e;
+}
+.yh .main .car .sp .single .right .count .add {
+  border-left: none;
+  margin-right: 20px;
+}
+.yh .main .car .sp .single .del_outer {
+  width: 7%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yh .main .car .sp .single .del_outer .del {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.yh .main .car .sp .single .del_outer:hover {
+  background: red;
+}
+.yh .main .car .sp .single .del_outer:hover .del path {
+  fill: white;
+}
+.yh .main .car .btns {
+  width: 100%;
+  height: 60px;
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.yh .main .car .btns .btn {
+  width: 15%;
+  height: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.yh .main .car .btns .btn:hover {
+  background: #ff6700;
+  color: white;
+}
+.yh .main .plckpl {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.yh .main .plckpl .single_pl {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  background: #f2f2f2;
+  margin-bottom: 8px;
+}
+.yh .main .plckpl .single_pl .outer {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.yh .main .plckpl .single_pl .outer img {
+  height: 45%;
+  margin: 1%;
+  cursor: pointer;
+}
+.yh .main .plckpl .single_pl .right {
+  width: 58%;
+  height: 100%;
+}
+.yh .main .plckpl .single_pl .right .nr {
+  width: 100%;
+  height: 70%;
+}
+.yh .main .plckpl .single_pl .right .btns {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.yh .main .plckpl .single_pl .right .btns .btn {
+  width: 15%;
+  height: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.yh .main .plckpl .single_pl .right .btns .btn:hover {
+  background: #ff6700;
+  color: white;
+}
+.yh .main .exit {
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+}
+.yh .main .exit .btn {
+  width: 40%;
+  height: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  background: #ff6700;
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+}
+
+/*# sourceMappingURL=u_center.css.map */

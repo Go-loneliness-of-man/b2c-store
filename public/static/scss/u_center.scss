@@ -1,0 +1,495 @@
+@charset "utf-8";
+@import '_public';
+@import '_u_public';
+
+.yh{
+  margin:0px $lrmargin;
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+
+  .aside{
+    @include wh(15%,100%);
+
+    background:white;
+
+    ul{
+
+      li{
+        @include cen(60px);
+
+        text-align:left;
+        font-size:$fsizes - 2;
+        color:darken($fcolor, 50%);
+        cursor:pointer;
+
+        &:hover{
+          color:$fcolor;
+        }
+      }
+    }
+  }
+
+  .main{
+    @include wh(83%,100%);
+
+    background:white;
+
+    & > div{
+      @include wh(100%, 100%);
+
+      display:none;
+      max-height:800px;
+      overflow-y:auto;
+    }
+
+    //订单模块开始
+    .dd{
+      flex-wrap:wrap;
+    }
+
+    //一个订单
+    .dd_single{
+      @include wh(100%, 160px);
+
+      display:flex;
+      background:#f2f2f2;
+      margin:10px;
+      margin-bottom:0px;
+      border-radius:10px;
+
+      .left{
+        @include wh(40%,100%);
+
+        img{
+          height:45%;
+          margin:4px 0px 4px 4px;
+          cursor:pointer;
+        }
+      }
+
+      .right{
+        @include wh(60%,100%);
+
+        .ms{
+          @include wh(100%, 75%);
+
+          display:flex;
+          flex-wrap:wrap;
+          align-content:flex-start;
+
+          .single{
+            $h:20px;
+
+            @include wh(100%,$h);
+
+            display:flex;
+
+            .sp_name{
+              @include wh(50%,$h);
+              @include slh();
+
+              font-size:$fsizes - 2;
+              color:$fcolor;
+              margin-right:10%;
+            }
+
+            .price{
+              @include wh(20%,$h);
+
+              font-size:$fsizes - 2;
+              color:$fcolor;
+            }
+
+            .count{
+              @include wh(20%,$h);
+
+              font-size:$fsizes - 2;
+              color:$fcolor;
+            }
+          }
+        }
+
+        .btns{
+          @include wh(100%, 25%);
+
+          display:flex;
+          align-items:center;
+          justify-content:flex-end;
+
+          .btn{
+            @include wh(20%, 30px);
+            @include cen(30px);
+            
+            border-radius:6px;
+            background:white;
+            font-size:$fsizes - 2;
+            color:$fcolor;
+            margin-right:20px;
+            cursor:pointer;
+
+            &:hover{
+              background:$fcolor_price;
+              color:white;
+            }
+          }
+        }
+      }
+    }
+    //订单模块结束
+
+    //个人信息模块开始
+    .user_xx{
+      width:100%;
+
+      .img{
+        @include wh(50%, 540px);
+
+        img{
+          display:block;
+          height:80%;
+          margin:0px auto;
+          max-width:100%;
+        }
+
+        .btns{
+          @include wh(100%, 20%);
+
+          label{
+            @include wh(100%, 50%);
+
+            input{
+              display:none;
+            }
+
+            .btn{
+              @include wh(100%,30px);
+              @include cen(40px);
+
+              background:#666;
+              color:$flcolor;
+              cursor:pointer;
+              border-radius:20px;
+              margin-top:10px;
+
+              &:hover{
+                background:#222;
+                color:white;
+              }
+            }
+          }
+        }
+      }
+
+      .other{
+        $h:40px;
+
+        @include wh(50%, 540px);
+        @include form($h, 70%,70%, 22%, 40%);
+
+        label .btn, label .enter{
+          @include cen($h);
+        }
+      }
+    }
+    //个人信息模块结束
+
+    //优惠券模块开始
+    
+    //优惠券模块结束
+    
+    //购物车模块开始
+    .car{
+      width:100%;
+
+      flex-wrap:wrap;
+      .sp{
+        width:100%;
+
+        .single{
+          @include wh(100%, 160px);
+
+          background:#f2f2f2;
+          display:flex;
+          margin:10px 0px;
+
+          .enter{
+            @include wh(8%, 100%);
+
+            cursor:pointer;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            .radius{
+              @include cir(16px);
+
+              border:solid 1px #999;
+              padding:2px;
+            }
+
+            &:hover{
+              background:#ddd;
+            }
+          }
+
+          .outer{
+            @include wh(20%, 100%);
+            
+            display:flex;
+            justify-content:center;
+
+            img{
+              height:100%;
+            }
+          }
+
+          .right{
+            @include wh(65%, 100%);
+            
+            .sp_name{
+              @include wh(100%, 30%);
+              @include cen(48px);
+              @include slh();
+
+              font-size:$fsizel + 2;
+              color:$fcolor;
+              text-align:left;
+            }
+
+            //产品选项、参数
+            .ms{
+              @include wh(100%, 20%);
+              @include cen(32px);
+
+              font-size:$fsizes - 2;
+              color:lighten($fcolor, 20%);
+              text-align:left;
+            }
+
+            .price{
+              @include wh(100%, 20%);
+              @include cen(32px);
+
+              font-size:$fsizel + 4;
+              color:$fcolor_price;
+              text-align:left;
+            }
+
+            .count{
+              @include wh(100%, 30%);
+              
+              display:flex;
+              justify-content:flex-end;
+              align-items:center;
+
+              .jian,.add,.num{
+                @include cen(30px);
+                @include rect(30px);
+
+                font-size:$fsizel;
+                color:lighten($fcolor, 20%);
+                border:solid 1px rgba(100,100,100,0.3);
+                cursor:pointer;
+              }
+              
+              .jian{
+                border-right:none;
+              }
+
+              .num{
+                color:$fcolor;
+              }
+
+              .add{
+                border-left:none;
+                margin-right:20px;
+              }
+            }
+          }
+
+          .del_outer{
+            @include wh(7%, 100%);
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            .del{
+              @include rect(28px);
+
+              cursor:pointer;
+            }
+
+            &:hover{
+              background:red;
+
+              .del{
+
+                path{
+                  fill:white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .btns{
+        @include wh(100%, 60px);
+
+        position:sticky;
+        bottom:0px;
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+
+        .btn{
+          @include wh(15%, 40px);
+          @include cen(40px);
+            
+          border-radius:6px;
+          background:white;
+          font-size:$fsizes - 2;
+          color:$fcolor;
+          margin-right:20px;
+          cursor:pointer;
+
+          &:hover{
+            background:$fcolor_price;
+            color:white;
+          }
+        }
+      }
+    }
+    //购物车模块结束
+    
+    //评论及查看评论模块开始
+    .plckpl{
+      width:100%;
+      flex-wrap:wrap;
+
+      .single_pl{
+        @include wh(100%, 160px);
+
+        display:flex;
+        justify-content:space-between;
+        background:#f2f2f2;
+        margin-bottom:8px;
+
+        .outer{
+          @include wh(40%, 100%);
+
+          display:flex;
+          flex-wrap:wrap;
+
+          img{
+            height:45%;
+            margin:1%;
+            cursor:pointer;
+          }
+        }
+
+        .right{
+          @include wh(58%, 100%);
+
+          .nr{
+            @include wh(100%, 70%);
+
+
+          }
+
+          .btns{
+            @include wh(100%, 30%);
+
+            display:flex;
+            align-items:center;
+            justify-content:flex-end; 
+
+            .btn{
+              @include wh(15%, 30px);
+              @include cen(30px);
+            
+              border-radius:6px;
+              background:white;
+              font-size:$fsizes - 2;
+              color:$fcolor;
+              margin-right:20px;
+              cursor:pointer;
+
+              &:hover{
+                background:$fcolor_price;
+                color:white;
+              }
+            }
+          }
+        }
+      }
+    }
+    //评论及查看评论模块结束
+
+    //退出登录模块开始
+    .exit{
+      @include wh(100%, 300px);
+
+      justify-content:center;
+      align-items:center;
+
+      .btn{
+        @include wh(40%, 60px);
+        @include cen(60px);
+
+        cursor:pointer;
+        background:$fcolor_price;
+        color:white;
+        font-size:$fsizel;
+        border-radius:30px;
+      }
+    }
+    //退出登录模块结束
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1142 @@
+@charset "utf-8";
+@import '_public';
+
+//头部导航
+header{
+  @include wh(100%, $nav_height);
+
+  position:fixed;
+  top:0px;
+  z-index:1;
+  background:white;
+  box-shadow:0px 1px 20px #aaa;
+
+  //导航的另外几个图标
+  ul li{
+    @include cen($nav_height);
+    @include wh(100px, $nav_height);
+    float:left;
+    margin-top:8px;
+    cursor:pointer;
+
+    svg{
+      @include rect($nav_height - 20px);
+
+      path{
+        fill:$fcolor;
+      }
+
+      &:hover path{
+        fill:lighten($fcolor,30%);
+      }
+    }
+  }
+
+  #header_two{
+    margin-left:94%;
+  }
+
+}
+
+//侧栏
+#aside{
+  $h:60px;                    //列表项高度
+  
+  float:left;
+  width:0px;
+  background:$bgacolor;
+  font-size:$fsizem;
+  transition:all 0.6s;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index:2;
+  overflow:hidden;
+
+  //左上角 logo 和标题
+  #logo{
+    @include cen($h);
+    background:$bglcolor;
+    font-size:$fsizes;
+    color:$flcolor;
+    width:260px;
+  }
+
+  //列表外层
+  .lbparent{
+    color:$facolor;
+    cursor:pointer;
+    width:260px;
+
+    //列表标题
+    .tag{
+      @include cen($h);
+      @include wh(100%, $h);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all 0.6s;
+      background:$bgacolor;
+
+      svg{
+        display:inline-block;
+        @include rect(24px);
+
+        //设置颜色
+        path{
+          fill:$facolor;
+          transition:all 0.6s;
+        }
+      }
+
+      //文字区域
+      span{
+        @include wh(160px, $h);
+      }
+      
+      //设置背景 hover 颜色
+      &:hover{
+        background:$bglcolor;
+        color:$flcolor;
+      }
+
+      //设置 svg 图标 hover 颜色
+      &:hover svg path{
+        fill:$flcolor;
+      }
+    }
+
+    //列表项活跃色
+    .lbact,.lbact:hover{
+      background:$lbact;
+      color:$flcolor;
+
+      svg path{
+        fill:$flcolor;
+      }
+    }
+
+    //列表整体
+    ul{
+      @include wh(100%, 0px);
+      overflow:hidden;
+      background:$bgaacolor;
+      transition:all 0.6s;
+
+      //列表项
+      li{
+        @include cen($h);
+        transition:all 0.6s;
+        
+        &:hover{
+          background:$bglcolor;
+          color:$flcolor;
+        }
+      }
+    }
+  }
+
+}
+
+//主栏
+#main{
+  @include wh(100%, 100%);
+
+  //与列表项对应的 main_child
+  .main_child{
+    @include wh(100%, 100%);
+    margin-top:$nav_height;
+    background:#f2f2f2;
+    display:none;
+
+    //外层 flex，采用 flex 布局的模块都在这里面
+    .child_flex{
+      @include wh(100%, 94%);
+
+      display:flex;
+      flex-wrap:wrap;//溢出向下换行
+      justify-content:space-around;//水平的一行内两端对齐（有边距）
+      align-content:space-between;//垂直方向上每一行两端对齐（无边距）
+      padding:1% 0%;//上下内边距
+
+      //首页开始，首页面板公共样式
+      .jjdb,.zjlogin,.czrz,.ddtj,.uhtj{
+        @include box();
+
+        //面板标题
+        h2{
+          @include wh(100%, 50px);
+          @include cen(50px);
+
+          font-size:$fsizem;
+          font-weight:400;
+          color:$fcolor;
+          border-bottom:1px solid rgba(200,200,200,0.7);
+        }
+      }
+
+      //首页上层
+      .top1{
+        @include wh(100%, 49%);
+        display:flex;
+        justify-content:space-around;
+
+        .jjdb,.zjlogin,.czrz{
+          @include wh(31%, 100%);
+        }
+
+        //紧急待办
+        .jjdb{
+
+          .b{
+            @include wh(100%, 80%);
+
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            align-content:space-around;
+
+            .single{
+              @include wh(80%, 40%);
+
+              background:#f5f5f5;
+              cursor:pointer;
+              transition:all 0.6s;
+              display:flex;
+              justify-content:center;
+              flex-wrap:wrap;
+
+              .top{
+                @include wh(80%, 40%);
+                @include cen(48px);
+
+                color:lighten($fcolor, 10%);
+                font-size:$fsizes;
+                text-align:left;
+              }
+
+              .bottom{
+                @include wh(80%, 60%);
+
+                color:$fcolor;
+                font-size:$fsizel + 10;
+                text-align:left;
+              }
+
+              &:hover{
+                background:#ddd;
+              }
+            }
+          }
+        }
+
+        //最近登录
+        .zjlogin{
+          display:flex;
+          flex-wrap:wrap;
+          justify-content: center;
+          align-items:center;
+
+          div{
+            @include lb(94%, 80%,50px);
+
+            overflow-y:auto;
+
+            //顶部标题、记录的共同样式
+            ul{
+              transition:all 0.6s;
+
+              //每一项的具体样式（由于封装，只需定义宽度和部分样式即可）
+              li{
+                @include slh();
+
+                font-size:$fsizes - 2;
+
+                &:nth-child(1){
+                  width:20%;
+                }
+                &:nth-child(2){
+                  width:40%;
+                }
+                &:nth-child(3){
+                  width:40%;
+                }
+              }
+
+              &:nth-child(1){
+                background:#f2f2f2;
+                
+                li{
+                  color:$fcolor;
+                }
+              }
+
+              &:hover{
+                background:#f2f2f2;
+              }
+            }
+          }
+        }
+
+        //操作日志
+        .czrz{
+          display:flex;
+          flex-wrap:wrap;
+          justify-content: center;
+          align-items:center;
+
+          div{
+            @include lb(94%, 80%, 50px);
+
+            overflow-y:auto;
+
+            //顶部标题、记录的共同样式
+            ul{
+              transition:all 0.6s;
+
+              //每一项的具体样式（由于封装，只需定义宽度和部分样式即可）
+              li{
+                @include slh();
+
+                font-size:$fsizes - 3;
+
+                &:nth-child(1){
+                  width:15%;
+                }
+                &:nth-child(2){
+                  width:30%;
+                }
+                &:nth-child(3){
+                  width:25%;
+                }
+                &:nth-child(4){
+                  width:30%;
+                }
+              }
+
+              &:nth-child(1){
+                background:#f2f2f2;
+                
+                li{
+                  color:$fcolor;
+                }
+              }
+
+              &:hover{
+                background:#f2f2f2;
+              }
+            }
+          }
+        }
+      }
+
+      //订单统计
+      .ddtj{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items:center;
+        overflow:hidden;
+
+        div{
+          @include wh(100%, 84%);
+
+          .ddtjCharts{
+            @include wh(700px, 300px);
+
+          }
+        }
+      }
+
+      //用户统计
+      .uhtj{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items:center;
+        overflow:hidden;
+
+        div{
+          @include wh(100%, 84%);
+
+          .uhtjCharts{
+            @include wh(700px, 300px);
+
+          }
+        }
+      }
+
+      //首页下层
+      .bottom1{
+        @include wh(100%, 49%);
+        display:flex;
+        justify-content:space-around;
+
+        .ddtj,.uhtj{
+          @include wh(47%, 100%);
+        }
+      }
+      //首页结束
+
+      //商品列表模块开始
+
+      .sech2, .dir2, .splb2{
+        @include box();
+      }
+
+      //搜索区
+      .sech2{
+        @include wh(98%, 7%);
+        margin-bottom:1%;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+
+        input{
+          @include wh(90%, 90%);
+
+          color:$fcolor;
+          font-size:$fsizel + 2;
+          padding-left:12px;
+        }
+
+        div{
+          @include wh(10%, 9%);
+          @include cen(54px);
+
+          cursor:pointer;
+          background:$bglcolor;
+          color:$facolor;
+          transition:all 0.6s;
+        }
+
+        &:hover div{
+          background:$bgacolor;
+          color:$flcolor;
+        }
+      }
+
+      //商品类目录
+      .dir2{
+        @include spclasslb(12%,92%,40px);
+
+        .dir2_child li svg{
+          @include rect(24px);
+          @include pos(5px,10px,5px,auto,0);
+
+          &:hover path{
+            fill:$fcolor;
+          }
+        }
+      }
+
+      //商品列表
+      .splb2{
+        @include lb(85%, 92%,50px);
+
+        //顶部标题、记录的共同样式
+        ul{
+
+          //每一项的具体样式（由于封装，只需定义宽度和部分样式即可）
+          li{
+            &:nth-child(1){
+              width:5%;
+            }
+            &:nth-child(2){
+              width:12%;
+            }
+            &:nth-child(3){
+              width:5%;
+            }
+            &:nth-child(4){
+              width:10%;
+            }
+            &:nth-child(5){
+              width:10%;
+
+              img{
+                height:90%;
+                margin:2% auto;
+              }
+            }
+            &:nth-child(6){
+              width:14%;
+            }
+            &:nth-child(7){
+              width:10%;
+            }
+            &:nth-child(8){
+              width:24%;
+              border-right:none;
+            }
+            &:nth-child(9){
+              width:10%;
+              border-right:none;
+              display:flex;
+              justify-content:space-around;
+              align-items:center;
+
+              svg{
+                @include wh(25px,24px);
+
+                cursor:pointer;
+
+                path{
+                  fill:$fcolor;
+                }
+                
+                &:hover path{
+                  fill:lighten($fcolor,30%);
+                }
+              }
+
+              .ckpl{
+                @include wh(40px,35px);
+              }
+            }
+          }
+        }
+      }
+      //商品列表模块结束
+
+      //上架商品开始
+      .dir3,.form3,.zdlb3{
+        @include box();
+
+        overflow-y:auto;
+      }
+
+      //目录外层
+      .dir3{
+        $h:40px;
+
+        @include wh(15%,100%);
+
+        overflow-y:auto;
+
+        //上一级、新建按钮
+        .up,.add{
+          @include wh(100%,$h);
+          @include cen($h);
+
+          background:$bgllcolor;
+          color:$flcolor;
+          cursor:pointer;
+
+          svg{
+            margin-top:5px;
+            height:$h - 10px;
+          }
+
+          &:hover{
+            background:$bgacolor;
+            color:$flcolor;
+          }
+        }
+
+        //目录
+        .dir3_child,.add_class{
+          width:100%;
+          transition:all 0.6s;
+
+          li{
+            @include wh(100%,$h - 4px);
+            @include cen($h - 4px);
+
+            background:$bglcolor;
+            color:$flcolor;
+            cursor:pointer;
+
+            &:hover{
+              background:$bgacolor;
+            }
+          }
+        }
+
+        .add_class{
+          height:0px;
+          overflow:hidden;
+        }
+      }
+
+      //上架商品表单区
+      .form3{
+        $h:40px;
+
+        @include wh(65%,100%);
+
+        overflow-y:auto;
+
+        form{
+          @include form(45px, 70%,78%,13%,94%);
+
+          display:none;
+        }
+      }
+
+      //字段列表
+      .zdlb3{
+        @include spclasslb(15%,100%,40px);
+      }
+      //上架商品结束
+      
+      //修改商品模块开始
+      .form4{
+        @include shadow();
+        @include wh(96%,100%);
+
+        background:white;
+        border-radius:10px;
+
+        form{
+          @include form(45px, 100%, 80%, 10%, 92%);
+
+          label{
+            margin:20px 0px;
+          }
+        }
+      }
+      //修改商品模块结束
+
+      //分类推荐模块开始
+      .sp_class_dir5,.sp_dir5,.sp_tj_dir5{
+        @include box();
+
+        overflow-y:auto;
+      }
+
+      //商品类目录
+      .sp_class_dir5{
+        @include spclasslb(18%,100%,40px);
+      }
+
+      //商品目录
+      .sp_dir5,.sp_tj_dir5{
+        
+        @include lb(39%,100%,50px);
+
+        //顶部标题、记录的共同样式
+        ul{
+          
+          cursor:pointer;
+          background:$bglcolor;
+
+          //每一项的具体样式
+          li{
+
+            color:$flcolor;
+
+            &:nth-child(1){
+              width:20%;
+            }
+
+            &:nth-child(2){
+              width:80%;
+            }
+          }
+
+          &:hover{
+            background:$bgaacolor;
+          }
+        }
+      }
+
+      .sp_tj_dir5{
+        ul{
+          background:$suces;
+
+          &:hover{
+            background:$sucesa;
+          }
+        }
+
+        //标题单独样式
+        ul:nth-child(1){
+          background:$sucesa;
+        }
+      }
+
+      //分类推荐模块结束
+
+      //额外字段模块开始
+      .ewlb6,.zs6,.form6{
+        @include box();
+      }
+
+      //额外字段列表
+      .ewlb6{
+        @include lb(98%,48%,40px);
+
+        //顶部标题、记录的共同样式
+        ul{
+
+          //每一项的具体样式
+          li{
+            
+            cursor:pointer;
+
+            &:nth-child(1){
+              width:4%;
+            }
+            &:nth-child(2){
+              width:10%;
+            }
+            &:nth-child(3){
+              width:10%;
+            }
+            &:nth-child(4){
+              width:4%;
+            }
+            &:nth-child(5){
+              width:16%;
+            }
+            &:nth-child(6){
+              width:16%;
+            }
+            &:nth-child(7){
+              width:16%;
+            }
+            &:nth-child(8){
+              width:16%;
+              border-right:none;
+            }
+            &:nth-child(9){
+              width:7%;
+              border-right:none;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+
+              svg{
+                @include wh(25px,20px);
+
+                path{
+                  fill:$fcolor;
+                }
+                
+                &:hover path{
+                  fill:lighten($fcolor,30%);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //属性值盒子、表单盒子共同样式
+      .zs6,.form6{
+        @include wh(48%,50%);
+        border-radius:10px;
+        margin:0px 1%;
+      }
+
+      //属性值盒子样式
+      .zs6{
+
+        form{
+          @include wh(100%,100%);
+          display:flex;
+
+          textarea{
+            @include wh(94%,100%);
+            background: white;
+            color:$fcolor;
+            font-size:$fsizel;
+          }
+
+          //右侧按钮外层
+          .flex6{
+            @include wh(6%,100%);
+            display:flex;
+            flex-direction:column;
+            justify-content:space-around;
+            align-items:center;
+
+            //按钮共同样式
+            .edt6, .enter6{
+              @include cen(42%);
+              line-height:260%;
+              font-size:$fsizel + 6;
+              color:darken($flcolor, 5%);
+              padding: 30% 0%;
+              cursor:pointer;
+            }
+
+            .edt6{
+              background:$edt;
+            }
+            
+            .enter6{
+              background:$suces;
+            }
+          }
+        }
+      }
+
+      //额外字段，表单区
+      .form6{
+        form{
+          @include form(40px, 70%,70%, 22%, 97%);
+        }
+      }
+      //额外字段模块结束
+
+      //新增账户模块开始
+      .aside19,.form19{
+        @include shadow();
+
+        background:white;
+        border-radius:10px;
+        overflow-y:auto;
+      }
+
+      .aside19{
+        @include spclasslb(10%,100%, 70px);
+      }
+
+      .form19{
+        @include wh(82%,100%);
+
+        form{
+          @include form(50px, 80%, 84%, 8%, 95%);
+
+          display:none;
+        }
+      }
+
+      //新增账户模块结束
+
+      //会员列表开始
+      .userlb16{
+        @include box();
+        @include lb(98%,100%,50px);
+
+        //顶部标题、记录的共同样式
+        ul{
+
+          //每一项的具体样式
+          li{
+            &:nth-child(1){
+              width:5%;
+            }
+            &:nth-child(2){
+              width:5%;
+
+              img{
+                height:90%;
+                margin:2% auto;
+              }
+            }
+            &:nth-child(3){
+              width:15%;
+            }
+            &:nth-child(4){
+              width:10%;
+            }
+            &:nth-child(5){
+              width:15%;
+            }
+            &:nth-child(6){
+              width:20%;
+            }
+            &:nth-child(7){
+              width:10%;
+            }
+            &:nth-child(8){
+              width:5%;
+            }
+            &:nth-child(9){
+              width:10%;
+            }
+            &:nth-child(10){
+              width:5%;
+              border-right:none;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              cursor:pointer;
+
+              svg{
+                @include wh(28px,36px);
+
+                path{
+                  fill:$fcolor;
+                }
+                
+                &:hover path{
+                  fill:lighten($fcolor,30%);
+                }
+              }
+            }
+          }
+        }
+      }
+      //会员列表结束
+
+      //管理员列表开始
+      .adminlb17{
+        @include box();
+        @include lb(98%,100%,50px);
+
+        //顶部标题、记录的共同样式
+        ul{
+
+          //每一项的具体样式
+          li{
+            &:nth-child(1){
+              width:10%;
+            }
+            &:nth-child(2){
+              width:35%;
+            }
+            &:nth-child(3){
+              width:30%;
+            }
+            &:nth-child(4){
+              width:15%;
+            }
+            &:nth-child(5){
+              width:10%;
+              border-right:none;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              cursor:pointer;
+
+              svg{
+                @include wh(24px,34px);
+
+                path{
+                  fill:$fcolor;
+                }
+                
+                &:hover path{
+                  fill:lighten($fcolor,30%);
+                }
+              }
+            }
+          }
+        }
+      }
+      //管理员列表结束
+
+      //修改账户信息开始
+      .form18{
+        @include wh(98%,100%);
+        @include box();
+
+        form{
+          @include form(50px, 70%, 84%, 8%, 95%);
+        }
+      }
+      //修改账户信息结束
+
+      //订单列表开始
+      .ddlb7{
+        @include box();
+        @include lb(97%, 92%, 40px);
+
+        //顶部标题、记录的共同样式
+        ul{
+
+          //每一项的具体样式
+          li{
+            &:nth-child(1){
+              width:5%;
+            }
+            &:nth-child(2){
+              width:6%;
+            }
+            &:nth-child(3){
+              width:6%;
+            }
+            &:nth-child(4){
+              width:6%;
+            }
+            &:nth-child(5){
+              width:15%;
+            }
+            &:nth-child(6){
+              width:10%;
+            }
+            &:nth-child(7){
+              width:15%;
+            }
+            &:nth-child(8){
+              width:20%;
+            }
+            &:nth-child(9){
+              width:8%;
+            }
+            &:nth-child(10){
+              width:8%;
+              border-right:none;
+              display:flex;
+              justify-content:center;
+              align-items:center;
+
+              svg{
+                @include wh(24px,34px);
+
+                cursor:pointer;
+                
+                path{
+                  fill:$fcolor;
+                }
+                
+                &:hover path{
+                  fill:lighten($fcolor,30%);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      //分页按钮
+      .fenye7{
+        @include box();
+        @include wh(97%, 6%);
+
+        ul{
+          @include wh(100%, 100%);
+
+          display:flex;
+          justify-content:flex-end;
+          align-items:center;
+
+          li{
+            $h:36px;
+
+            @include wh($h, $h);
+            @include cen($h);
+
+            background:$bgllcolor;
+            color:$flcolor;
+            border:4px white solid;
+            transition:all 0.6s;
+            cursor:pointer;
+
+            &:hover{
+              width:42px;
+              height:42px;
+              line-height:42px;
+            }
+          }
+        }
+      }
+      //订单列表结束
+
+      //待发货单开始
+      .dfhlb8{
+        @include box();
+        @include lb(98%, 64%, 60px);
+
+        //顶部标题、记录的共同样式
+        ul{
+          cursor:pointer;
+
+          //每一项的具体样式
+          li{
+            &:nth-child(1){
+              width:5%;
+            }
+            &:nth-child(2){
+              width:20%;
+
+              img{
+                height:90%;
+                margin:1% 2px;
+              }
+            }
+            &:nth-child(3){
+              width:7%;
+            }
+            &:nth-child(4){
+              width:10%;
+            }
+            &:nth-child(5){
+              width:8%;
+            }
+            &:nth-child(6){
+              width:10%;
+            }
+            &:nth-child(7){
+              width:33%;
+            }
+            &:nth-child(8){
+              width:7%;
+            }
+          }
+        }
+
+        .active{
+
+          li{
+            background:$bgacolor;
+            color:$flcolor;
+          }
+        }
+      }
+
+      .form8{
+        @include box();
+        @include wh(94%, 29%);
+        @include form(48px, 80%, 88%,10%,90%);
+
+        .btn{
+          height:40px;
+
+        }
+      }
+      //待发货单结束
+
+      //财务报表开始
+      .top11,.top12,.top13{
+        @include wh(96%, 57%);
+        @include shadow();
+
+        background:white;
+
+        .tj{
+          @include wh(1500px, 400px);
+        }
+      }
+
+      .bottom11,.bottom12,.bottom13{
+        @include wh(96%, 40%);
+        @include shadow();
+
+        background: white;
+
+        .lb{
+          @include lb(100%, 100%, 40px);
+
+          //顶部标题、记录的共同样式
+          ul{
+
+            //每一项的具体样式
+            li{
+              &:nth-child(1){
+                width:20%;
+              }
+              &:nth-child(2){
+                width:80%;
+              }
+            }
+          }
+        }
+      }
+      //财务报表结束
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
